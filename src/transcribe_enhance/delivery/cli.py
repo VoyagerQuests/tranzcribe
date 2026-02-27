@@ -1,0 +1,50 @@
+"""CLI entrypoint for transcribe-enhance."""
+
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+
+from transcribe_enhance.application.pipeline import run_pipeline
+from transcribe_enhance.infrastructure.toml_config import load_instructions
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="transcribe-enhance",
+        description="Enhance an existing iTT transcript using AI and formatting rules.",
+    )
+    parser.add_argument("--audio", type=Path, required=True, help="Path to input audio file")
+    parser.add_argument("--itt", type=Path, required=True, help="Path to input .itt file")
+    parser.add_argument(
+        "--instructions",
+        type=Path,
+        required=True,
+        help="Path to instructions TOML file",
+    )
+    parser.add_argument("--out", type=Path, required=True, help="Path to output .itt file")
+    parser.add_argument(
+        "--no-timing-adjust",
+        action="store_true",
+        help="Disallow timing adjustments (use original timestamps)",
+    )
+    return parser
+
+
+def main() -> int:
+    parser = build_parser()
+    args = parser.parse_args()
+
+    config = load_instructions(args.instructions)
+    run_pipeline(
+        audio_path=args.audio,
+        itt_path=args.itt,
+        instructions=config,
+        output_path=args.out,
+        allow_timing_adjust=not args.no_timing_adjust,
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

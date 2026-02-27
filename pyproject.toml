@@ -1,0 +1,23 @@
+[project]
+name = "tranzcribe"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14.0"
+dependencies = []
+
+[project.scripts]
+transcribe-enhance = "transcribe_enhance.delivery.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/transcribe_enhance"]
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+tranzcribe = { workspace = true }
