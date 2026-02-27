@@ -5,6 +5,7 @@ import argparse
 from pathlib import Path
 
 from transcribe_enhance.application.pipeline import run_pipeline
+from transcribe_enhance.domain.models import Context, Instructions
 from transcribe_enhance.infrastructure.toml_config import load_instructions
 
 
@@ -23,6 +24,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--out", type=Path, required=True, help="Path to output .itt file")
     parser.add_argument(
+        "--details",
+        type=Path,
+        help="Optional path to extra context details (Markdown or text)",
+    )
+    parser.add_argument(
         "--no-timing-adjust",
         action="store_true",
         help="Disallow timing adjustments (use original timestamps)",
@@ -35,6 +41,18 @@ def main() -> int:
     args = parser.parse_args()
 
     config = load_instructions(args.instructions)
+    if args.details:
+        details_text = args.details.read_text(encoding="utf-8").strip()
+        config = Instructions(
+            context=Context(
+                purpose=config.context.purpose,
+                audience=config.context.audience,
+                tone=config.context.tone,
+                details=details_text,
+            ),
+            output_rules=config.output_rules,
+            ai=config.ai,
+        )
     run_pipeline(
         audio_path=args.audio,
         itt_path=args.itt,

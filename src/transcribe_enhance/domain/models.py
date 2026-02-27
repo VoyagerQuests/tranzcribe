@@ -23,6 +23,7 @@ class Context:
     purpose: str
     audience: str
     tone: str
+    details: str
 
 
 @dataclass(frozen=True)

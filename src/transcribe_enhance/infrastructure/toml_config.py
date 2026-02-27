@@ -23,6 +23,12 @@ DEFAULT_OUTPUT_RULES = OutputRules(
 DEFAULT_AI = AIConfig(provider="openai", model="gpt-4.1", temperature=0.2)
 
 
+def _load_details(details_path: Path) -> str:
+    if not details_path.exists():
+        raise FileNotFoundError(f"Details file not found: {details_path}")
+    return details_path.read_text(encoding="utf-8").strip()
+
+
 def load_instructions(path: Path) -> Instructions:
     data = tomllib.loads(path.read_text(encoding="utf-8"))
 
@@ -30,10 +36,17 @@ def load_instructions(path: Path) -> Instructions:
     output_raw = data.get("output_rules", {})
     ai_raw = data.get("ai", {})
 
+    details = ""
+    details_path_raw = context_raw.get("details_path")
+    if details_path_raw:
+        details_path = (path.parent / details_path_raw).resolve()
+        details = _load_details(details_path)
+
     context = Context(
         purpose=context_raw.get("purpose", ""),
         audience=context_raw.get("audience", ""),
         tone=context_raw.get("tone", ""),
+        details=details,
     )
 
     output_rules = OutputRules(
