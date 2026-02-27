@@ -2,6 +2,7 @@
 
 
 import argparse
+import logging
 from pathlib import Path
 
 from transcribe_enhance.application.pipeline import run_pipeline
@@ -33,12 +34,22 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Disallow timing adjustments (use original timestamps)",
     )
+    parser.add_argument(
+        "--enable-ai",
+        action="store_true",
+        help="Enable AI enhancement (requires provider configuration and API key)",
+    )
     return parser
 
 
 def main() -> int:
     parser = build_parser()
     args = parser.parse_args()
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    )
 
     config = load_instructions(args.instructions)
     if args.details:
@@ -59,6 +70,7 @@ def main() -> int:
         instructions=config,
         output_path=args.out,
         allow_timing_adjust=not args.no_timing_adjust,
+        enable_ai=args.enable_ai,
     )
     return 0
 

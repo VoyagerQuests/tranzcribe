@@ -39,6 +39,7 @@ def test_roundtrip_preserves_exact_bytes(tmp_path: Path) -> None:
         instructions=_instructions(),
         output_path=output,
         allow_timing_adjust=True,
+        enable_ai=False,
     )
 
     assert output.read_bytes() == source.read_bytes()

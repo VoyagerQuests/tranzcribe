@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<tt xmlns:vt="http://namespace.itunes.apple.com/itt/ttml-extension#vertical" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:ittp="http://www.w3.org/ns/ttml/profile/imsc1#parameter" xmlns:tt_feature="http://www.w3.org/ns/ttml/feature/" xmlns:ebutts="urn:ebu:tt:style" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:tt_extension="http://www.w3.org/ns/ttml/extension/" xmlns:tt_profile="http://www.w3.org/ns/ttml/profile/" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:ry="http://namespace.itunes.apple.com/itt/ttml-extension#ruby" xmlns:itts="http://www.w3.org/ns/ttml/profile/imsc1#styling" xmlns="http://www.w3.org/ns/ttml" xml:lang="en" ttp:dropMode="nonDrop" ttp:frameRate="30" ttp:frameRateMultiplier="1 1" ttp:timeBase="smpte" xmlns:tt="http://www.w3.org/ns/ttml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<tt xmlns:vt="http://namespace.itunes.apple.com/itt/ttml-extension#vertical" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:ittp="http://www.w3.org/ns/ttml/profile/imsc1#parameter" xmlns:tt_feature="http://www.w3.org/ns/ttml/feature/" xmlns:ebutts="urn:ebu:tt:style" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:tt_extension="http://www.w3.org/ns/ttml/extension/" xmlns:tt_profile="http://www.w3.org/ns/ttml/profile/" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:ry="http://namespace.itunes.apple.com/itt/ttml-extension#ruby" xmlns:itts="http://www.w3.org/ns/ttml/profile/imsc1#styling" xmlns="http://www.w3.org/ns/ttml" xml:lang="en-US" ttp:dropMode="nonDrop" ttp:frameRate="30" ttp:frameRateMultiplier="1 1" ttp:timeBase="smpte" xmlns:tt="http://www.w3.org/ns/ttml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <head>
     <styling>
       <style xml:id="normal" tts:color="white" tts:fontFamily="sansSerif" tts:fontSize="100%" tts:fontStyle="normal" tts:fontWeight="normal"/>
@@ -10,289 +10,289 @@
   </head>
   <body tts:color="white" region="bottom" style="normal">
     <div>
-      <p begin="00:00:07:00" end="00:00:10:15" region="bottom">We're going to quickly walk through the</p>
-      <p begin="00:00:10:15" end="00:00:14:15" region="bottom"> implementation of Quest one Episode two,</p>
-      <p begin="00:00:14:15" end="00:00:18:15" region="bottom"> where we're looking at the</p>
-      <p begin="00:00:18:15" end="00:00:21:15" region="bottom"> start of implementing a clean architecture.</p>
-      <p begin="00:00:21:15" end="00:00:24:15" region="bottom">So this is going to be a</p>
-      <p begin="00:00:25:15" end="00:00:28:15" region="bottom"> lot of new information, and if you feel a little bit overwhelmed</p>
-      <p begin="00:00:28:15" end="00:00:31:15" region="bottom"> with the amount of info, don't</p>
-      <p begin="00:00:31:15" end="00:00:34:15" region="bottom"> worry because every episode after this, we're</p>
-      <p begin="00:00:34:15" end="00:00:37:15" region="bottom"> going to focus in on every one of these aspects.</p>
-      <p begin="00:00:38:15" end="00:00:41:15" region="bottom">Just, I would just say, make</p>
-      <p begin="00:00:41:15" end="00:00:45:15" region="bottom"> sure that you work through it and understand the</p>
-      <p begin="00:00:45:15" end="00:00:48:15" region="bottom"> basics of this episode and then</p>
-      <p begin="00:00:48:15" end="00:00:51:15" region="bottom"> we'll, in episode 3, start looking at layered</p>
-      <p begin="00:00:51:15" end="00:00:52:15" region="bottom"> architecture.</p>
-      <p begin="00:00:52:15" end="00:00:55:15" region="bottom">So let's go through what's</p>
-      <p begin="00:00:55:15" end="00:00:56:15" region="bottom"> required to implement.</p>
-      <p begin="00:00:57:15" end="00:01:00:15" region="bottom">Okay, so you can clone our</p>
-      <p begin="00:01:00:15" end="00:01:01:15" region="bottom"> code.</p>
-      <p begin="00:01:01:15" end="00:01:02:15" region="bottom">I would suggest you do this.</p>
-      <p begin="00:01:02:15" end="00:01:04:15" region="bottom">Git clone.</p>
-      <p begin="00:01:04:15" end="00:01:07:15" region="bottom">And go into quest one,</p>
-      <p begin="00:01:07:15" end="00:01:13:15" region="bottom"> and then change the branch to Episode two.</p>
-      <p begin="00:01:13:15" end="00:01:16:15" region="bottom">So this will give you the</p>
-      <p begin="00:01:16:15" end="00:01:19:15" region="bottom"> code that I wrote for this episode,</p>
-      <p begin="00:01:19:15" end="00:01:23:15" region="bottom"> uv sync, and then you can run the</p>
-      <p begin="00:01:23:15" end="00:01:25:15" region="bottom">FastAPI in Dev.</p>
-      <p begin="00:01:25:15" end="00:01:27:15" region="bottom">And this is what we'll look at.</p>
-      <p begin="00:01:28:15" end="00:01:29:15" region="bottom">this is the implementation</p>
-      <p begin="00:01:29:15" end="00:01:32:15" region="bottom">There's a few things I want to point out over here.</p>
-      <p begin="00:01:32:15" end="00:01:36:15" region="bottom">Look at the schema, that the schema enforces.</p>
-      <p begin="00:01:36:15" end="00:01:39:15" region="bottom">So notice name over there name,</p>
-      <p begin="00:01:39:15" end="00:01:43:15" region="bottom"> constraint is between 10 and 100, and</p>
-      <p begin="00:01:43:15" end="00:01:46:15" region="bottom"> also health constraint between 0 and 100, and</p>
-      <p begin="00:01:46:15" end="00:01:49:15" region="bottom"> also the attribute constraints between 0 and 100.</p>
-      <p begin="00:01:50:15" end="00:01:54:15" region="bottom">And notice how it's appearing in the FastAPI documentation.</p>
-      <p begin="00:02:03:15" end="00:02:05:15" region="bottom"> Same with with all of these different schemas.</p>
-      <p begin="00:02:06:15" end="00:02:09:15" region="bottom">You'll see the same constraints appearing here.</p>
-      <p begin="00:02:09:15" end="00:02:13:15" region="bottom">Okay,</p>
-      <p begin="00:02:13:15" end="00:02:14:15" region="bottom"> let's give it a test.</p>
-      <p begin="00:02:14:15" end="00:02:17:15" region="bottom">So I'm going to try it out.</p>
-      <p begin="00:02:18:15" end="00:02:21:15" region="bottom">Firstly, let's test one of those constraints.</p>
-      <p begin="00:02:21:15" end="00:02:24:15" region="bottom">I'm gonna create Gandalf, and this is not gonna work.</p>
-      <p begin="00:02:24:15" end="00:02:26:15" region="bottom">The reason for that will</p>
-      <p begin="00:02:27:15" end="00:02:30:15" region="bottom"> be clear, strings should have at least 10 characters.</p>
-      <p begin="00:02:30:15" end="00:02:32:15" region="bottom">That's the first constraint I pointed out earlier.</p>
-      <p begin="00:02:32:15" end="00:02:35:15" region="bottom">Okay, so Gandalf the White</p>
-      <p begin="00:02:35:15" end="00:02:37:15" region="bottom">...that should work.</p>
-      <p begin="00:02:37:15" end="00:02:41:15" region="bottom">There we go Gandalf the White was created.</p>
-      <p begin="00:02:41:15" end="00:02:44:15" region="bottom">Look at the ID over there, so the ID makes it clear that</p>
-      <p begin="00:02:44:15" end="00:02:46:15" region="bottom"> it did create and it returned.</p>
-      <p begin="00:02:49:15" end="00:02:53:15" region="bottom">I'm going to just do use that ID and select Gandalf, see...</p>
-      <p begin="00:02:53:15" end="00:02:56:15" region="bottom">So this is coming from the Json file back</p>
-      <p begin="00:02:56:15" end="00:02:59:15" region="bottom"> into our API, the API returns it.</p>
-      <p begin="00:02:59:15" end="00:03:02:15" region="bottom">Let's do an update of the attributes.</p>
-      <p begin="00:03:02:15" end="00:03:05:15" region="bottom">I'm firstly going to show you how we get a</p>
-      <p begin="00:03:05:15" end="00:03:08:15" region="bottom"> failure, so we'll update Gandalf, and</p>
-      <p begin="00:03:11:19" end="00:03:14:15" region="bottom">I'm going to update presence to 120.</p>
-      <p begin="00:03:14:15" end="00:03:15:15" region="bottom">This will give me an error.</p>
-      <p begin="00:03:16:15" end="00:03:19:15" region="bottom">So we have your input, should be less than or equal to 100.</p>
-      <p begin="00:03:19:15" end="00:03:23:15" region="bottom">Next, I'm going to add an,</p>
-      <p begin="00:03:23:15" end="00:03:27:15" region="bottom"> an unexpected attribute here test, just</p>
-      <p begin="00:03:27:15" end="00:03:29:15" region="bottom"> putting any value...100.</p>
-      <p begin="00:03:29:15" end="00:03:34:15" region="bottom">There we go.</p>
-      <p begin="00:03:34:15" end="00:03:36:15" region="bottom">So we have now 2 error messages here.</p>
-      <p begin="00:03:36:15" end="00:03:39:15" region="bottom">The 2nd one, extra inputs are not permitted.</p>
-      <p begin="00:03:39:15" end="00:03:44:15" region="bottom">So</p>
-      <p begin="00:03:44:15" end="00:03:47:15" region="bottom"> now I'm going to update 3 attributes, send</p>
-      <p begin="00:03:48:15" end="00:03:51:15" region="bottom"> in a packet of data and update the attributes.</p>
-      <p begin="00:03:54:15" end="00:03:57:15" region="bottom">Oh, this didn't work, why not?</p>
-      <p begin="00:03:58:15" end="00:04:00:15" region="bottom">Illegal trailing comma ... so let's just fix that.</p>
-      <p begin="00:04:00:15" end="00:04:02:15" region="bottom">All right, this should have worked.</p>
-      <p begin="00:04:02:15" end="00:04:03:15" region="bottom">There we go.</p>
-      <p begin="00:04:03:15" end="00:04:06:15" region="bottom">So Gandalf was updated, 85, 99, 95</p>
-      <p begin="00:04:06:15" end="00:04:08:15" region="bottom"> on might, agility, vitality.</p>
-      <p begin="00:04:08:15" end="00:04:12:15" region="bottom">That's a great example of how this API is working.</p>
-      <p begin="00:04:12:15" end="00:04:15:08" region="bottom">All of this comes from the</p>
-      <p begin="00:04:15:08" end="00:04:16:15" region="bottom"> openAPI spec.</p>
-      <p begin="00:04:17:15" end="00:04:20:15" region="bottom">So this is the openAPI spec that's</p>
-      <p begin="00:04:20:15" end="00:04:23:15" region="bottom"> automatically written for us by FastAPI and</p>
-      <p begin="00:04:23:15" end="00:04:26:15" region="bottom"> then Swagger user interface, uses this to build</p>
-      <p begin="00:04:26:15" end="00:04:28:15" region="bottom"> that user interface we just used.</p>
-      <p begin="00:04:28:15" end="00:04:31:15" region="bottom">Right,</p>
-      <p begin="00:04:32:15" end="00:04:36:15" region="bottom"> there's another document system that ships with FastAPI </p>
-      <p begin="00:04:36:15" end="00:04:37:15" region="bottom">It's Redoc.</p>
-      <p begin="00:04:37:15" end="00:04:39:15" region="bottom">This is a great example of Redoc of here.</p>
-      <p begin="00:04:39:15" end="00:04:42:15" region="bottom">Redoc doesn't allow you to test the API</p>
-      <p begin="00:04:42:15" end="00:04:45:15" region="bottom"> as nicely as you do with swagger API, but it does</p>
-      <p begin="00:04:45:15" end="00:04:48:15" region="bottom"> give you an, in my opinion, sometimes a</p>
-      <p begin="00:04:48:15" end="00:04:51:15" region="bottom"> nicer, navigation through the API.</p>
-      <p begin="00:04:52:15" end="00:04:55:15" region="bottom">I'm just going to quickly touch on</p>
-      <p begin="00:04:55:15" end="00:05:00:15" region="bottom"> this and then we'll look at ... we'll move on from here.</p>
-      <p begin="00:05:00:15" end="00:05:03:15" region="bottom">So what I'm going to do now is show you the</p>
-      <p begin="00:05:03:15" end="00:05:05:15" region="bottom">Command line interface (CLI).</p>
-      <p begin="00:05:05:15" end="00:05:08:15" region="bottom">Before I do that, that's Gandalf the White</p>
-      <p begin="00:05:08:15" end="00:05:11:15" region="bottom"> which we just created and updated, just so you see it in the Json file.</p>
-      <p begin="00:05:12:15" end="00:05:15:15" region="bottom">So the 1st thing in order to run the API</p>
-      <p begin="00:05:17:14" end="00:05:24:14" region="bottom">We'll use uv pip install -e .</p>
-      <p begin="00:05:24:14" end="00:05:27:14" region="bottom"> which installs our package as an editable</p>
-      <p begin="00:05:27:14" end="00:05:28:14" region="bottom"> in the local environment.</p>
-      <p begin="00:05:28:14" end="00:05:31:14" region="bottom">It also give me the ability of just using character.</p>
-      <p begin="00:05:31:14" end="00:05:35:14" region="bottom">Once I source into the virtual environment like a vineyard.</p>
-      <p begin="00:05:35:14" end="00:05:38:14" region="bottom">And then I'll type character and that shows you that</p>
-      <p begin="00:05:38:14" end="00:05:40:14" region="bottom"> the command line interface is working.</p>
-      <p begin="00:05:40:14" end="00:05:43:14" region="bottom">So inside the README</p>
-      <p begin="00:05:43:14" end="00:05:46:14" region="bottom"> file, you'll see an example of the command line interface usage.</p>
-      <p begin="00:05:46:14" end="00:05:47:14" region="bottom">I'm just copying that.</p>
-      <p begin="00:05:47:14" end="00:05:50:14" region="bottom">So, let me just</p>
-      <p begin="00:05:50:14" end="00:05:53:14" region="bottom"> go to the front of here and use character to</p>
-      <p begin="00:05:54:14" end="00:05:57:14" region="bottom"> initiate.</p>
-      <p begin="00:05:57:14" end="00:05:58:14" region="bottom">Oh, that's it.</p>
-      <p begin="00:05:58:14" end="00:06:00:14" region="bottom">That's all ... &quot;Sauron the Black&quot;</p>
-      <p begin="00:06:00:14" end="00:06:02:14" region="bottom">Okay, that should work.</p>
-      <p begin="00:06:02:14" end="00:06:03:14" region="bottom">There we go.</p>
-      <p begin="00:06:03:14" end="00:06:04:14" region="bottom">Sauron was created.</p>
-      <p begin="00:06:04:14" end="00:06:08:14" region="bottom">So notice there also an ID was generated.</p>
-      <p begin="00:06:09:14" end="00:06:12:14" region="bottom">So it entered the Json file.</p>
-      <p begin="00:06:12:14" end="00:06:14:19" region="bottom">I'm gonna do the same thing, just show you </p>
-      <p begin="00:06:14:19" end="00:06:17:14" region="bottom">how the same constraints are coming into action here.</p>
-      <p begin="00:06:17:14" end="00:06:20:14" region="bottom">So we're getting an error here that says input</p>
-      <p begin="00:06:20:14" end="00:06:21:14" region="bottom"> should be less than or equal to 100.</p>
-      <p begin="00:06:21:14" end="00:06:24:14" region="bottom">Going into the API.</p>
-      <p begin="00:06:24:14" end="00:06:26:14" region="bottom">This is the FastAPI doc.</p>
-      <p begin="00:06:26:14" end="00:06:30:14" region="bottom">This is the application file, the</p>
-      <p begin="00:06:30:14" end="00:06:33:14" region="bottom"> CLI, showing you the different code files</p>
-      <p begin="00:06:33:14" end="00:06:34:14" region="bottom"> and then we're going to step through them.</p>
-      <p begin="00:06:34:14" end="00:06:35:14" region="bottom">DTO.</p>
-      <p begin="00:06:36:14" end="00:06:38:14" region="bottom">Repository.</p>
-      <p begin="00:06:38:14" end="00:06:43:01" region="bottom">So we have your api.py, application.py, cli.py</p>
-      <p begin="00:06:43:01" end="00:06:47:14" region="bottom"> domain.py, dto.py and repository.py.</p>
-      <p begin="00:06:47:14" end="00:06:50:14" region="bottom">So let's look at just</p>
-      <p begin="00:06:50:14" end="00:06:53:14" region="bottom"> going to activate, make sure we're in the right virtual environment of here</p>
-      <p begin="00:06:53:14" end="00:06:55:14" region="bottom"> doesn't seem to be the case.</p>
-      <p begin="00:06:55:14" end="00:06:58:14" region="bottom">So we're going to step through domain models</p>
-      <p begin="00:06:58:14" end="00:06:59:14" region="bottom"> and annotated types.</p>
-      <p begin="00:06:59:14" end="00:07:02:14" region="bottom">That's really what I want to focus on in this video.</p>
-      <p begin="00:07:02:14" end="00:07:05:14" region="bottom">A lot of the other stuff we'll expand on</p>
-      <p begin="00:07:05:14" end="00:07:06:14" region="bottom"> in future episode.</p>
-      <p begin="00:07:06:14" end="00:07:08:14" region="bottom">Data transfer objects.</p>
-      <p begin="00:07:09:14" end="00:07:12:14" region="bottom">I'll touch on that, repository, application use cases,</p>
-      <p begin="00:07:12:14" end="00:07:15:14" region="bottom"> API, CLI (Command Line Interface).</p>
-      <p begin="00:07:15:14" end="00:07:18:03" region="bottom">So let's look at the domain models over here.</p>
-      <p begin="00:07:18:14" end="00:07:21:14" region="bottom">So this is 2 things that I want you to note we're</p>
-      <p begin="00:07:21:14" end="00:07:23:14" region="bottom"> importing pidantic and typing annotated.</p>
-      <p begin="00:07:23:14" end="00:07:25:14" region="bottom">We're defining an annotated type.</p>
-      <p begin="00:07:25:14" end="00:07:27:14" region="bottom">And if this is, doesn't make a lot of sense.</p>
-      <p begin="00:07:28:14" end="00:07:31:14" region="bottom">Look at mastering Python type hints,</p>
-      <p begin="00:07:31:14" end="00:07:34:14" region="bottom"> where I going to great detail on how to use annotated types.</p>
-      <p begin="00:07:34:14" end="00:07:37:14" region="bottom">Notice there the pattern that's defined.</p>
-      <p begin="00:07:37:14" end="00:07:42:14" region="bottom">That's a regular expression that, Pydantic will enforce.</p>
-      <p begin="00:07:42:14" end="00:07:45:14" region="bottom">So pidantic absorbs and examines the</p>
-      <p begin="00:07:45:14" end="00:07:48:14" region="bottom"> annotated type and then builds the constraint, the same</p>
-      <p begin="00:07:48:14" end="00:07:51:14" region="bottom"> thing here with, uh, with the next</p>
-      <p begin="00:07:51:14" end="00:07:54:14" region="bottom"> one character name, we have the min length and max length over there.</p>
-      <p begin="00:07:54:14" end="00:07:57:14" region="bottom">That's why Gandalf failed originally,</p>
-      <p begin="00:07:58:14" end="00:08:01:14" region="bottom"> and over here we have the health as well as the different attributes,</p>
-      <p begin="00:08:01:14" end="00:08:02:14" region="bottom"> 0 to 100 constraint.</p>
-      <p begin="00:08:03:14" end="00:08:05:14" region="bottom">That's our 2 classes.</p>
-      <p begin="00:08:05:14" end="00:08:06:14" region="bottom">These are the domain classes.</p>
-      <p begin="00:08:06:14" end="00:08:07:14" region="bottom">Notice how simple they are.</p>
-      <p begin="00:08:08:14" end="00:08:12:14" region="bottom">They are built using the annotated types.</p>
-      <p begin="00:08:12:14" end="00:08:15:14" region="bottom">Now in future, we're going to add some</p>
-      <p begin="00:08:15:14" end="00:08:18:14" region="bottom"> more invariants into these classes, but for</p>
-      <p begin="00:08:18:14" end="00:08:20:14" region="bottom"> now, we're just keeping them super simple like this.</p>
-      <p begin="00:08:20:14" end="00:08:23:14" region="bottom">Data transfer objects, we are importing</p>
-      <p begin="00:08:23:14" end="00:08:25:14" region="bottom"> the same annotated types.</p>
-      <p begin="00:08:25:14" end="00:08:26:14" region="bottom">line four.</p>
-      <p begin="00:08:26:14" end="00:08:29:14" region="bottom">over there, from the main import, we're importing all of the annotated</p>
-      <p begin="00:08:29:14" end="00:08:31:14" region="bottom"> types, and then we're building the DTO.</p>
-      <p begin="00:08:32:14" end="00:08:35:14" region="bottom">The 1st detail here is a class, which we</p>
-      <p begin="00:08:35:14" end="00:08:39:14" region="bottom"> are doing just so that we don't need to really find model conflict.</p>
-      <p begin="00:08:39:14" end="00:08:42:14" region="bottom">We're defining that once, and we're inheriting from this class</p>
-      <p begin="00:08:42:14" end="00:08:44:14" region="bottom"> so that that's everywhere.</p>
-      <p begin="00:08:44:14" end="00:08:48:14" region="bottom">We're defining your character attributes, TTO, which will reuse.</p>
-      <p begin="00:08:48:14" end="00:08:51:14" region="bottom">So then we have character base,</p>
-      <p begin="00:08:51:14" end="00:08:54:14" region="bottom"> which uh, where</p>
-      <p begin="00:08:54:14" end="00:08:58:14" region="bottom"> we are, that's where we're using character attributes DTO as well as name and elf.</p>
-      <p begin="00:08:58:14" end="00:09:00:14" region="bottom">So that gives us a base for our character.</p>
-      <p begin="00:09:00:14" end="00:09:03:14" region="bottom">And we define in create character request DTO.</p>
-      <p begin="00:09:03:14" end="00:09:06:14" region="bottom">This is a request that will attach now to fast IPI.</p>
-      <p begin="00:09:06:14" end="00:09:09:14" region="bottom">And we just using character-based TTO for that.</p>
-      <p begin="00:09:10:14" end="00:09:13:14" region="bottom">We're also defining our response,</p>
-      <p begin="00:09:13:14" end="00:09:16:14" region="bottom"> and the only thing that the response has, in addition</p>
-      <p begin="00:09:16:14" end="00:09:18:14" region="bottom"> to the request, is the ID.</p>
-      <p begin="00:09:18:14" end="00:09:22:14" region="bottom">We have update, uh, character attributes,</p>
-      <p begin="00:09:22:14" end="00:09:24:14" region="bottom"> request, TTI, so this would be for the update.</p>
-      <p begin="00:09:24:14" end="00:09:26:14" region="bottom">Notice the none equals none over there.</p>
-      <p begin="00:09:26:14" end="00:09:29:14" region="bottom">It indicates that this is these are all optional fields.</p>
-      <p begin="00:09:30:14" end="00:09:33:14" region="bottom">So that's why we were able to only update 3 of them.</p>
-      <p begin="00:09:33:14" end="00:09:36:14" region="bottom">Uh, and then update character response DTO.</p>
-      <p begin="00:09:36:14" end="00:09:41:14" region="bottom">That's where we are returning the create character response, TTO.</p>
-      <p begin="00:09:41:14" end="00:09:44:14" region="bottom">All right, repository</p>
-      <p begin="00:09:44:14" end="00:09:47:14" region="bottom"> is that in a clean architecture, repository is</p>
-      <p begin="00:09:47:14" end="00:09:48:14" region="bottom"> where you're dealing with the data.</p>
-      <p begin="00:09:49:14" end="00:09:52:14" region="bottom">So here we have adjacent repository, and</p>
-      <p begin="00:09:52:14" end="00:09:55:14" region="bottom"> not going to go into great detail here, so that's,</p>
-      <p begin="00:09:55:14" end="00:09:59:14" region="bottom"> uh, we have your character depository Jason file.</p>
-      <p begin="00:09:59:14" end="00:10:02:14" region="bottom">So typically, this would be what a repository looks like.</p>
-      <p begin="00:10:03:14" end="00:10:05:14" region="bottom">You could do it as functions.</p>
-      <p begin="00:10:05:14" end="00:10:07:14" region="bottom">In this case we implemented a class.</p>
-      <p begin="00:10:07:14" end="00:10:10:14" region="bottom">And we have things like list all, get by ID,</p>
-      <p begin="00:10:10:14" end="00:10:11:14" region="bottom"> add, update.</p>
-      <p begin="00:10:12:14" end="00:10:15:14" region="bottom">And then we have some output classes down here, read, draw,</p>
-      <p begin="00:10:15:14" end="00:10:17:14" region="bottom"> read, validate it, write validate it, write, draw.</p>
-      <p begin="00:10:17:14" end="00:10:19:14" region="bottom">Application use cases.</p>
-      <p begin="00:10:19:14" end="00:10:22:14" region="bottom">So the application use cases interact with the domain.</p>
-      <p begin="00:10:22:14" end="00:10:24:14" region="bottom">They also receive the DTOs.</p>
-      <p begin="00:10:24:14" end="00:10:27:14" region="bottom">So DTO objects come in, the</p>
-      <p begin="00:10:27:14" end="00:10:30:14" region="bottom"> delivery layer transfers them into the application layer,</p>
-      <p begin="00:10:31:14" end="00:10:34:14" region="bottom"> and the application layer unpacks them, and then establishes</p>
-      <p begin="00:10:34:14" end="00:10:37:14" region="bottom"> or instantiates the object, and</p>
-      <p begin="00:10:37:14" end="00:10:41:14" region="bottom"> works with a repository or other infrastructure as required.</p>
-      <p begin="00:10:42:14" end="00:10:43:14" region="bottom">Give an example of that.</p>
-      <p begin="00:10:43:14" end="00:10:46:14" region="bottom">So we have your create character.</p>
-      <p begin="00:10:46:14" end="00:10:49:14" region="bottom">You'll see that it receives create</p>
-      <p begin="00:10:49:14" end="00:10:52:14" region="bottom"> character request TTO, and it returns,</p>
-      <p begin="00:10:52:14" end="00:10:54:14" region="bottom"> create character response TTO.</p>
-      <p begin="00:10:54:14" end="00:10:57:14" region="bottom">What it does there on line 39.</p>
-      <p begin="00:10:57:14" end="00:11:01:14" region="bottom">Is notice the request.attribute,</p>
-      <p begin="00:11:01:14" end="00:11:03:14" region="bottom"> dot model dump.</p>
-      <p begin="00:11:03:14" end="00:11:06:14" region="bottom">What it does over there, it unpacked the DTO,</p>
-      <p begin="00:11:06:14" end="00:11:09:14" region="bottom"> gets all the data of the DTO, and it then,</p>
-      <p begin="00:11:09:14" end="00:11:12:14" region="bottom"> uh, It creates</p>
-      <p begin="00:11:13:14" end="00:11:15:14" region="bottom"> a character attribute model.</p>
-      <p begin="00:11:15:14" end="00:11:18:14" region="bottom">So that's the 1st thing we're doing, creating the</p>
-      <p begin="00:11:18:14" end="00:11:21:14" region="bottom"> character attributes of it, and that also forms</p>
-      <p begin="00:11:21:14" end="00:11:24:14" region="bottom"> part of the creation of the character model line 35.</p>
-      <p begin="00:11:24:14" end="00:11:27:14" region="bottom">So character equals character, we put in an ID,</p>
-      <p begin="00:11:28:14" end="00:11:32:14" region="bottom"> which is new ID, which is a function which is generating a new ID for us.</p>
-      <p begin="00:11:32:14" end="00:11:36:14" region="bottom">Name and health, and then also the attributes,</p>
-      <p begin="00:11:36:14" end="00:11:38:14" region="bottom"> and that's creating the character.</p>
-      <p begin="00:11:38:14" end="00:11:41:14" region="bottom">Uh, and then we're sending that to the repository.</p>
-      <p begin="00:11:41:14" end="00:11:44:14" region="bottom">You always want to send and we'll look into detail on this,</p>
-      <p begin="00:11:45:14" end="00:11:48:14" region="bottom"> but you want to send the actual object to the repository,</p>
-      <p begin="00:11:48:14" end="00:11:50:14" region="bottom"> not the DTO object.</p>
-      <p begin="00:11:50:14" end="00:11:54:14" region="bottom">Okay, update character attribute.</p>
-      <p begin="00:11:54:14" end="00:11:57:14" region="bottom">This is the update function, and then get character.</p>
-      <p begin="00:11:57:14" end="00:11:58:14" region="bottom">API.</p>
-      <p begin="00:11:59:14" end="00:12:02:14" region="bottom">So, Notice how simple</p>
-      <p begin="00:12:02:14" end="00:12:03:14" region="bottom"> the API is.</p>
-      <p begin="00:12:03:14" end="00:12:06:14" region="bottom">It's really, we don't have any logic in here, and this is</p>
-      <p begin="00:12:06:14" end="00:12:08:14" region="bottom"> the command line interface as well.</p>
-      <p begin="00:12:08:14" end="00:12:11:14" region="bottom">What I want you to notice here</p>
-      <p begin="00:12:11:14" end="00:12:12:14" region="bottom"> is the command line.</p>
-      <p begin="00:12:13:14" end="00:12:15:14" region="bottom">Let's go to.</p>
-      <p begin="00:12:15:14" end="00:12:16:14" region="bottom">For example, you create.</p>
-      <p begin="00:12:17:14" end="00:12:20:14" region="bottom">What it does, it does exactly the same thing as the API.</p>
-      <p begin="00:12:20:14" end="00:12:24:14" region="bottom">And this is why I wanted to have 2 I</p>
-      <p begin="00:12:25:14" end="00:12:28:14" region="bottom"> wanted to have the API as well as the come online interface.</p>
-      <p begin="00:12:28:14" end="00:12:29:14" region="bottom">You can notice the pattern.</p>
-      <p begin="00:12:30:14" end="00:12:33:14" region="bottom">All we're doing is we're packing it in the data transfer</p>
-      <p begin="00:12:33:14" end="00:12:36:14" region="bottom"> object and sending it to the application layer, from</p>
-      <p begin="00:12:36:14" end="00:12:38:14" region="bottom"> that point onwards, everything stays the same.</p>
-      <p begin="00:12:38:14" end="00:12:41:14" region="bottom">We don't have anything in the application layer that knows about</p>
-      <p begin="00:12:41:14" end="00:12:44:14" region="bottom"> fast API or online interface.</p>
-      <p begin="00:12:44:14" end="00:12:47:14" region="bottom">All we know is there's a data transfer object coming in</p>
-      <p begin="00:12:47:14" end="00:12:49:14" region="bottom"> and we're unpacking that and we're doing a create.</p>
-      <p begin="00:12:50:14" end="00:12:53:14" region="bottom">Whether that comes in, for example, imagine that</p>
-      <p begin="00:12:53:14" end="00:12:56:14" region="bottom"> you have some GRPC or you have some other type of</p>
-      <p begin="00:12:56:14" end="00:12:59:14" region="bottom"> call or maybe you</p>
-      <p begin="00:13:00:14" end="00:13:03:14" region="bottom"> have come online, fast API, maybe you want to type add a</p>
-      <p begin="00:13:03:14" end="00:13:06:14" region="bottom"> different type of API or an event, a good example, an event that</p>
-      <p begin="00:13:06:14" end="00:13:09:14" region="bottom"> gets absorbed and you want to create a character, you'll do</p>
-      <p begin="00:13:09:14" end="00:13:12:14" region="bottom"> exactly the same thing, pack it into a DTO object,</p>
-      <p begin="00:13:12:14" end="00:13:14:14" region="bottom"> send it off to the application layer.</p>
-      <p begin="00:13:14:14" end="00:13:17:14" region="bottom">Uh, create</p>
-      <p begin="00:13:17:14" end="00:13:20:14" region="bottom"> character in the application layer and that's it, you don't worry about that.</p>
-      <p begin="00:13:20:14" end="00:13:23:14" region="bottom">In that way, you are creating a loose coupled</p>
-      <p begin="00:13:23:14" end="00:13:26:14" region="bottom"> system, which makes it easy to change.</p>
-      <p begin="00:13:26:14" end="00:13:29:14" region="bottom">The moment you have a tightly coupled system.</p>
-      <p begin="00:13:29:14" end="00:13:32:14" region="bottom">If anything changes, then you need to</p>
-      <p begin="00:13:32:14" end="00:13:36:14" region="bottom"> try and figure out where are all the dependencies and what needs to change.</p>
-      <p begin="00:13:36:14" end="00:13:39:14" region="bottom">And that was a quick walk through</p>
-      <p begin="00:13:39:14" end="00:13:42:14" region="bottom"> for the implementation of episode two.</p>
-      <p begin="00:13:42:14" end="00:13:47:14" region="bottom">I will see you in the next version, in the next episode.</p>
-      <p begin="00:13:47:14" end="00:13:50:14" region="bottom">So I hope this was helpful if there's anything you</p>
-      <p begin="00:13:51:14" end="00:13:52:14" region="bottom"> want me to zoom in on.</p>
-      <p begin="00:13:52:14" end="00:13:55:14" region="bottom">Let me know, is there any of this that you want me to expand on?</p>
-      <p begin="00:13:55:14" end="00:13:58:14" region="bottom">I'm going to make these walkthroughs quicker,</p>
-      <p begin="00:13:59:14" end="00:14:02:14" region="bottom"> so it takes a little bit less time, but there is obviously</p>
-      <p begin="00:14:02:14" end="00:14:05:14" region="bottom"> the chance that you might want me to expand on anything here.</p>
-      <p begin="00:14:05:14" end="00:14:08:14" region="bottom">Just let me know and I'm looking forward to seeing you on the</p>
-      <p begin="00:14:08:14" end="00:14:11:14" region="bottom"> instructions for episode three.</p>
-      <p begin="00:14:11:14" end="00:14:12:14" region="bottom">Thank you.</p>
+      <p begin="00:00:07:00" end="00:00:10:00" region="bottom">We're going to quickly walk through</p>
+      <p begin="00:00:10:00" end="00:00:14:00" region="bottom">the implementation of Quest 1, Episode</p>
+      <p begin="00:00:14:00" end="00:00:15:00" region="bottom">2.</p>
+      <p begin="00:00:15:00" end="00:00:19:00" region="bottom">Where we're looking at the</p>
+      <p begin="00:00:19:00" end="00:00:22:00" region="bottom"> start of implementing a clean architecture.</p>
+      <p begin="00:00:22:00" end="00:00:24:00" region="bottom">So this is going to be a</p>
+      <p begin="00:00:25:00" end="00:00:29:00" region="bottom">lot of new information. If you feel a bit overwhelmed</p>
+      <p begin="00:00:29:00" end="00:00:32:00" region="bottom">by the amount of info, don't worry.</p>
+      <p begin="00:00:32:00" end="00:00:35:00" region="bottom">Because every episode after this, we're going</p>
+      <p begin="00:00:35:00" end="00:00:38:00" region="bottom">to focus in on each of these aspects.</p>
+      <p begin="00:00:39:00" end="00:00:42:00" region="bottom">I would just say, make sure that</p>
+      <p begin="00:00:42:00" end="00:00:46:00" region="bottom"> you work through it and understand the basics</p>
+      <p begin="00:00:46:00" end="00:00:49:00" region="bottom">of this episode. Then, in episode</p>
+      <p begin="00:00:49:00" end="00:00:52:00" region="bottom">3, we'll start looking at layered architecture.</p>
+      <p begin="00:00:53:00" end="00:00:56:00" region="bottom">So let's go through what's</p>
+      <p begin="00:00:56:00" end="00:00:57:00" region="bottom"> required to implement.</p>
+      <p begin="00:00:58:00" end="00:01:01:00" region="bottom">Okay, so you can clone our code.</p>
+      <p begin="00:01:01:00" end="00:01:02:00" region="bottom">I would suggest you do this.</p>
+      <p begin="00:01:02:00" end="00:01:04:00" region="bottom">Git clone.</p>
+      <p begin="00:01:04:00" end="00:01:07:00" region="bottom">And go into quest one,</p>
+      <p begin="00:01:08:00" end="00:01:13:00" region="bottom">and then change the branch to Episode 2.</p>
+      <p begin="00:01:13:00" end="00:01:17:00" region="bottom">This will give you the code</p>
+      <p begin="00:01:17:00" end="00:01:20:00" region="bottom">that I wrote for this episode. Use</p>
+      <p begin="00:01:20:00" end="00:01:23:00" region="bottom">uvicorn, and then you can run the Fast</p>
+      <p begin="00:01:23:00" end="00:01:24:00" region="bottom">API in dev.</p>
+      <p begin="00:01:25:00" end="00:01:28:00" region="bottom">And this is what we'll look at.</p>
+      <p begin="00:01:28:00" end="00:01:29:00" region="bottom">This is the implementation.</p>
+      <p begin="00:01:29:00" end="00:01:32:00" region="bottom">There are a few things I want to point out here.</p>
+      <p begin="00:01:32:00" end="00:01:36:00" region="bottom">Look at the schema, and what the schema enforces.</p>
+      <p begin="00:01:36:00" end="00:01:40:00" region="bottom">Notice the name field there. The name constraint</p>
+      <p begin="00:01:40:00" end="00:01:42:00" region="bottom">is between 10 and 100 characters.</p>
+      <p begin="00:01:42:00" end="00:01:45:00" region="bottom">Also, the health constraint is between 0</p>
+      <p begin="00:01:45:00" end="00:01:48:00" region="bottom">and 100, and the attribute constraints</p>
+      <p begin="00:01:49:00" end="00:01:50:00" region="bottom">are between 0 and 100.</p>
+      <p begin="00:01:50:00" end="00:01:54:00" region="bottom">Notice how it's appearing in the FastAPI documentation.</p>
+      <p begin="00:02:04:00" end="00:02:07:00" region="bottom">Same with all of these different schemas.</p>
+      <p begin="00:02:07:00" end="00:02:09:00" region="bottom">You'll see those same constraints appearing here.</p>
+      <p begin="00:02:09:00" end="00:02:14:00" region="bottom">Okay, let's give it a test.</p>
+      <p begin="00:02:14:00" end="00:02:18:00" region="bottom">So I'm going to try it out.</p>
+      <p begin="00:02:18:00" end="00:02:21:00" region="bottom">First, let's test one of those constraints.</p>
+      <p begin="00:02:21:00" end="00:02:24:00" region="bottom">I'm going to create Gandalf, and this is not going to work.</p>
+      <p begin="00:02:24:00" end="00:02:28:00" region="bottom">The reason for that will be clear.</p>
+      <p begin="00:02:28:00" end="00:02:30:00" region="bottom">Strings should have at least 10 characters.</p>
+      <p begin="00:02:30:00" end="00:02:32:00" region="bottom">That's the first constraint I pointed out earlier.</p>
+      <p begin="00:02:32:00" end="00:02:36:00" region="bottom">Okay, so Gandalf,</p>
+      <p begin="00:02:36:00" end="00:02:38:00" region="bottom">the White, that should work.</p>
+      <p begin="00:02:38:00" end="00:02:42:00" region="bottom">There we go, Gandalf the White was created.</p>
+      <p begin="00:02:42:00" end="00:02:45:00" region="bottom">Look at the ID over there. The ID makes it clear that</p>
+      <p begin="00:02:45:00" end="00:02:47:00" region="bottom">it did create and return.</p>
+      <p begin="00:02:47:00" end="00:02:50:00" region="bottom">I'm going</p>
+      <p begin="00:02:50:00" end="00:02:54:00" region="bottom">to just use that ID and select Gandalf. See?</p>
+      <p begin="00:02:54:00" end="00:02:57:00" region="bottom">So this is coming from the JSON file back into</p>
+      <p begin="00:02:57:00" end="00:02:58:00" region="bottom"> our API.</p>
+      <p begin="00:02:59:00" end="00:03:00:00" region="bottom">API returns it.</p>
+      <p begin="00:03:00:00" end="00:03:03:00" region="bottom">Let's do an update of the attribute.</p>
+      <p begin="00:03:03:00" end="00:03:06:00" region="bottom">First, I'm going to show you how we get a</p>
+      <p begin="00:03:06:00" end="00:03:08:00" region="bottom">failure. So we'll update Gandalf.</p>
+      <p begin="00:03:09:00" end="00:03:12:00" region="bottom">And I'm going</p>
+      <p begin="00:03:12:00" end="00:03:14:00" region="bottom">to update presence to 120.</p>
+      <p begin="00:03:15:00" end="00:03:16:00" region="bottom">This will give me an error.</p>
+      <p begin="00:03:16:00" end="00:03:19:00" region="bottom">So we have: your input should be less than or equal to 100.</p>
+      <p begin="00:03:19:00" end="00:03:22:00" region="bottom">Next, I'm going to add an</p>
+      <p begin="00:03:23:00" end="00:03:26:00" region="bottom">unexpected attribute to</p>
+      <p begin="00:03:26:00" end="00:03:30:00" region="bottom">your test, just putting any value, 100.</p>
+      <p begin="00:03:30:00" end="00:03:34:00" region="bottom">There we go.</p>
+      <p begin="00:03:34:00" end="00:03:36:00" region="bottom">So we have now two error messages here.</p>
+      <p begin="00:03:37:00" end="00:03:40:00" region="bottom">The second one: extra inputs are not permitted.</p>
+      <p begin="00:03:40:00" end="00:03:45:00" region="bottom">So now</p>
+      <p begin="00:03:45:00" end="00:03:48:00" region="bottom">I'm going to update three attributes, send</p>
+      <p begin="00:03:48:00" end="00:03:51:00" region="bottom"> in a packet of data and update the attribute.</p>
+      <p begin="00:03:55:00" end="00:03:58:00" region="bottom">Ah, this didn't work. Why not?</p>
+      <p begin="00:03:58:00" end="00:04:00:00" region="bottom">Illegal trailing comma, so let's just fix that.</p>
+      <p begin="00:04:00:00" end="00:04:03:00" region="bottom">All right, this should have worked.</p>
+      <p begin="00:04:04:00" end="00:04:07:00" region="bottom">So Gandalf was updated: 85, 99, 95</p>
+      <p begin="00:04:07:00" end="00:04:09:00" region="bottom">on my agility and vitality.</p>
+      <p begin="00:04:09:00" end="00:04:13:00" region="bottom">That's a great example of how this API is working.</p>
+      <p begin="00:04:13:00" end="00:04:16:00" region="bottom">All of this comes from the Open</p>
+      <p begin="00:04:16:00" end="00:04:18:00" region="bottom"> API spec.</p>
+      <p begin="00:04:18:00" end="00:04:21:00" region="bottom">So this is the OpenAPI spec that's automatically</p>
+      <p begin="00:04:21:00" end="00:04:24:00" region="bottom">written for us by FastAPI, and then the Swagger</p>
+      <p begin="00:04:24:00" end="00:04:28:00" region="bottom">user interface uses this to build the UI we just used.</p>
+      <p begin="00:04:29:00" end="00:04:33:00" region="bottom">Right, there's</p>
+      <p begin="00:04:33:00" end="00:04:36:00" region="bottom">another documentation system that ships with FastAPI.</p>
+      <p begin="00:04:36:00" end="00:04:37:00" region="bottom">Redoc.</p>
+      <p begin="00:04:37:00" end="00:04:39:00" region="bottom">This is a great example of Redoc here.</p>
+      <p begin="00:04:40:00" end="00:04:43:00" region="bottom">Redoc doesn't allow you to test the API</p>
+      <p begin="00:04:43:00" end="00:04:46:00" region="bottom">as nicely as you do with Swagger UI, but it does</p>
+      <p begin="00:04:46:00" end="00:04:49:00" region="bottom">give you, in my opinion, sometimes a</p>
+      <p begin="00:04:49:00" end="00:04:52:00" region="bottom">nicer navigation through the API.</p>
+      <p begin="00:04:54:00" end="00:04:57:00" region="bottom">I'm just going to quickly touch on this and then we'll look at,</p>
+      <p begin="00:04:58:00" end="00:05:01:00" region="bottom">and we'll move on from here.</p>
+      <p begin="00:05:01:00" end="00:05:03:00" region="bottom">So what I'm going to do now is show you the</p>
+      <p begin="00:05:03:00" end="00:05:05:00" region="bottom">command line interface.</p>
+      <p begin="00:05:05:00" end="00:05:08:00" region="bottom">Before I do that, that's Gandalf the White,</p>
+      <p begin="00:05:09:00" end="00:05:12:00" region="bottom">which we just created and updated, just so you see it in the JSON file.</p>
+      <p begin="00:05:12:00" end="00:05:15:00" region="bottom">So the first thing in order to</p>
+      <p begin="00:05:15:00" end="00:05:17:00" region="bottom">run the API,</p>
+      <p begin="00:05:18:00" end="00:05:21:00" region="bottom">we'll use pip install -e . which installs</p>
+      <p begin="00:05:22:00" end="00:05:25:00" region="bottom">our package as editable in the local environment.</p>
+      <p begin="00:05:25:00" end="00:05:29:00" region="bottom">It will also give me the ability to just use 'character'.</p>
+      <p begin="00:05:29:00" end="00:05:32:00" region="bottom">Once I source into the virtual environment, like I'm doing here,</p>
+      <p begin="00:05:32:00" end="00:05:35:00" region="bottom">then I'll type 'character' and that shows you that</p>
+      <p begin="00:05:35:00" end="00:05:38:00" region="bottom">the command line interface is working.</p>
+      <p begin="00:05:38:00" end="00:05:40:00" region="bottom">So inside the README file,</p>
+      <p begin="00:05:41:00" end="00:05:44:00" region="bottom">you'll see an example of the command line interface usage.</p>
+      <p begin="00:05:44:00" end="00:05:47:00" region="bottom">I'm just copying that.</p>
+      <p begin="00:05:47:00" end="00:05:48:00" region="bottom">So, let me just</p>
+      <p begin="00:05:48:00" end="00:05:51:00" region="bottom">go to the front here and use 'character' to initiate—oh, that's it.</p>
+      <p begin="00:05:51:00" end="00:05:58:00" region="bottom">That's all I saw on the black.</p>
+      <p begin="00:05:58:00" end="00:06:00:00" region="bottom">Okay, that should work.</p>
+      <p begin="00:06:02:00" end="00:06:03:00" region="bottom">There we go.</p>
+      <p begin="00:06:03:00" end="00:06:04:00" region="bottom">Sauron was created.</p>
+      <p begin="00:06:04:00" end="00:06:05:00" region="bottom">So notice there also an ID was generated.</p>
+      <p begin="00:06:05:00" end="00:06:09:00" region="bottom">So it entered the JSON file.</p>
+      <p begin="00:06:09:00" end="00:06:11:00" region="bottom">I'm going to do the same thing, just to show you how the</p>
+      <p begin="00:06:12:00" end="00:06:15:00" region="bottom">same constraints are coming into action here.</p>
+      <p begin="00:06:15:00" end="00:06:18:00" region="bottom">So we're getting an error here that says input</p>
+      <p begin="00:06:18:00" end="00:06:20:00" region="bottom">should be less than or equal to 100.</p>
+      <p begin="00:06:20:00" end="00:06:21:00" region="bottom">Going into the API.</p>
+      <p begin="00:06:22:00" end="00:06:25:00" region="bottom">There's the FastAPI doc.</p>
+      <p begin="00:06:25:00" end="00:06:26:00" region="bottom">This is the application file, the CLI.</p>
+      <p begin="00:06:26:00" end="00:06:31:00" region="bottom">Just showing you the different code files, and then we're going to step through them.</p>
+      <p begin="00:06:31:00" end="00:06:35:00" region="bottom">DTO, repository.</p>
+      <p begin="00:06:35:00" end="00:06:37:00" region="bottom">So we have here api.py, application.py,</p>
+      <p begin="00:06:38:00" end="00:06:42:00" region="bottom">domain.py, dto.py, repository.py,</p>
+      <p begin="00:06:42:00" end="00:06:45:00" region="bottom">and repository.py.</p>
+      <p begin="00:06:45:00" end="00:06:47:00" region="bottom">Let's look at—just going to activate,</p>
+      <p begin="00:06:48:00" end="00:06:51:00" region="bottom">make sure we're in the right virtual environment here. Doesn't seem to be the case.</p>
+      <p begin="00:06:51:00" end="00:06:55:00" region="bottom">So we're going to step through domain models</p>
+      <p begin="00:06:56:00" end="00:06:59:00" region="bottom">and annotated types.</p>
+      <p begin="00:06:59:00" end="00:07:00:00" region="bottom">That's really what I want to focus on in this video.</p>
+      <p begin="00:07:00:00" end="00:07:03:00" region="bottom">A lot of the other stuff we'll expand</p>
+      <p begin="00:07:03:00" end="00:07:06:00" region="bottom">in future episodes.</p>
+      <p begin="00:07:06:00" end="00:07:07:00" region="bottom">Data transfer object.</p>
+      <p begin="00:07:07:00" end="00:07:09:00" region="bottom">I'll touch on that, repository, application use cases,</p>
+      <p begin="00:07:09:00" end="00:07:12:00" region="bottom">API, CLI, command line interface.</p>
+      <p begin="00:07:12:00" end="00:07:16:00" region="bottom">So let's look at the domain models over here.</p>
+      <p begin="00:07:16:00" end="00:07:18:00" region="bottom">So there are two things I wanted to note with importing</p>
+      <p begin="00:07:19:00" end="00:07:22:00" region="bottom">Pydantic and typing.Annotated.</p>
+      <p begin="00:07:22:00" end="00:07:24:00" region="bottom">We're defining an annotated type.</p>
+      <p begin="00:07:24:00" end="00:07:26:00" region="bottom">If this doesn't make a lot of sense,</p>
+      <p begin="00:07:26:00" end="00:07:28:00" region="bottom">look at Mastering Python Type Hints,</p>
+      <p begin="00:07:28:00" end="00:07:31:00" region="bottom">where I go into great detail on how to use annotated types.</p>
+      <p begin="00:07:31:00" end="00:07:34:00" region="bottom">Notice there, the pattern that's defined,</p>
+      <p begin="00:07:34:00" end="00:07:37:00" region="bottom">that's a regular expression that Pydantic</p>
+      <p begin="00:07:38:00" end="00:07:41:00" region="bottom">will enforce.</p>
+      <p begin="00:07:41:00" end="00:07:42:00" region="bottom">So Pydantic absorbs and examines the</p>
+      <p begin="00:07:42:00" end="00:07:45:00" region="bottom">annotated type and then builds the constraint.</p>
+      <p begin="00:07:45:00" end="00:07:47:00" region="bottom">The same thing here with the next one, character name: we have the min length and max length over there.</p>
+      <p begin="00:07:47:00" end="00:07:51:00" region="bottom">That's why Gandalf failed originally,</p>
+      <p begin="00:07:51:00" end="00:07:55:00" region="bottom">and over here we have the health, as well as the different attributes,</p>
+      <p begin="00:07:55:00" end="00:07:58:00" region="bottom">0 to 100 constraint.</p>
+      <p begin="00:07:58:00" end="00:08:02:00" region="bottom">That's our two classes.</p>
+      <p begin="00:08:02:00" end="00:08:03:00" region="bottom">These are the domain classes.</p>
+      <p begin="00:08:03:00" end="00:08:05:00" region="bottom">Notice how simple they are.</p>
+      <p begin="00:08:05:00" end="00:08:07:00" region="bottom">They are built using the annotated types.</p>
+      <p begin="00:08:07:00" end="00:08:08:00" region="bottom">Now in the future, we're going to add some more invariants</p>
+      <p begin="00:08:08:00" end="00:08:12:00" region="bottom">into these classes, but for now, we're just keeping them super simple like this.</p>
+      <p begin="00:08:13:00" end="00:08:17:00" region="bottom">Data transfer objects: we are importing</p>
+      <p begin="00:08:17:00" end="00:08:21:00" region="bottom">the same annotated types.</p>
+      <p begin="00:08:21:00" end="00:08:24:00" region="bottom">Line four over there, from domain import, we're</p>
+      <p begin="00:08:24:00" end="00:08:26:00" region="bottom">importing all of the annotated types.</p>
+      <p begin="00:08:26:00" end="00:08:29:00" region="bottom">And then we're building the DTO. The first DTO here is a class,</p>
+      <p begin="00:08:29:00" end="00:08:31:00" region="bottom">which we are doing just so that</p>
+      <p begin="00:08:31:00" end="00:08:34:00" region="bottom">we don't have to redefine model config.</p>
+      <p begin="00:08:34:00" end="00:08:37:00" region="bottom">We're defining that once, and we're inheriting from this class</p>
+      <p begin="00:08:37:00" end="00:08:39:00" region="bottom">so that that's everywhere.</p>
+      <p begin="00:08:39:00" end="00:08:42:00" region="bottom">We're defining your character attributes DTO, which we'll reuse.</p>
+      <p begin="00:08:42:00" end="00:08:43:00" region="bottom">So then we have character base,</p>
+      <p begin="00:08:44:00" end="00:08:48:00" region="bottom">which is where we're using character attributes DTO as well as name and health.</p>
+      <p begin="00:08:48:00" end="00:08:51:00" region="bottom">So that gives us a base for our character, and we're defining</p>
+      <p begin="00:08:51:00" end="00:08:54:00" region="bottom">create character request DTO.</p>
+      <p begin="00:08:55:00" end="00:08:59:00" region="bottom">This is a request that we'll attach now to FastAPI.</p>
+      <p begin="00:08:59:00" end="00:09:02:00" region="bottom">And we're just using character base DTO for that.</p>
+      <p begin="00:09:02:00" end="00:09:04:00" region="bottom">We're also defining our response,</p>
+      <p begin="00:09:04:00" end="00:09:07:00" region="bottom">and the only thing that the response has, in addition</p>
+      <p begin="00:09:07:00" end="00:09:10:00" region="bottom">to the request, is the ID.</p>
+      <p begin="00:09:10:00" end="00:09:13:00" region="bottom">We have update character attributes</p>
+      <p begin="00:09:13:00" end="00:09:16:00" region="bottom">request DTO, so this would be for the update.</p>
+      <p begin="00:09:16:00" end="00:09:18:00" region="bottom">Notice the None equals None over there.</p>
+      <p begin="00:09:19:00" end="00:09:23:00" region="bottom">It indicates that these are all optional fields.</p>
+      <p begin="00:09:23:00" end="00:09:25:00" region="bottom">So that's why we were able to only update three of them.</p>
+      <p begin="00:09:25:00" end="00:09:27:00" region="bottom">And then update character response DTO.</p>
+      <p begin="00:09:27:00" end="00:09:30:00" region="bottom">That's where we are returning the create character response DTO.</p>
+      <p begin="00:09:30:00" end="00:09:33:00" region="bottom">All right, repository</p>
+      <p begin="00:09:33:00" end="00:09:37:00" region="bottom">is, in a clean architecture, where you're dealing with the data.</p>
+      <p begin="00:09:37:00" end="00:09:41:00" region="bottom">So here we have a JSON repository, and</p>
+      <p begin="00:09:42:00" end="00:09:45:00" region="bottom">I'm not going to go into great detail here, so that's</p>
+      <p begin="00:09:45:00" end="00:09:48:00" region="bottom">we have your character repository JSON file.</p>
+      <p begin="00:09:48:00" end="00:09:49:00" region="bottom">So typically, this would be what a repository looks like.</p>
+      <p begin="00:09:49:00" end="00:09:52:00" region="bottom">You could do it as functions.</p>
+      <p begin="00:09:53:00" end="00:09:56:00" region="bottom">In this case, we implemented a class and we have things</p>
+      <p begin="00:09:56:00" end="00:10:00:00" region="bottom">like list all, get by ID, add, update.</p>
+      <p begin="00:10:00:00" end="00:10:03:00" region="bottom">And then we have some helper classes down here: read, draw,</p>
+      <p begin="00:10:03:00" end="00:10:05:00" region="bottom">read, validate, write, write, draw.</p>
+      <p begin="00:10:05:00" end="00:10:08:00" region="bottom">Application use cases.</p>
+      <p begin="00:10:08:00" end="00:10:12:00" region="bottom">So the application use cases interact with the domain.</p>
+      <p begin="00:10:12:00" end="00:10:15:00" region="bottom">They also receive the DTOs.</p>
+      <p begin="00:10:15:00" end="00:10:17:00" region="bottom">So DTO objects come in, the delivery</p>
+      <p begin="00:10:18:00" end="00:10:20:00" region="bottom">layer transfers them into the application layer, and the</p>
+      <p begin="00:10:20:00" end="00:10:23:00" region="bottom">application layer unpacks them, and then establishes</p>
+      <p begin="00:10:23:00" end="00:10:25:00" region="bottom">or instantiates the object, and works</p>
+      <p begin="00:10:25:00" end="00:10:28:00" region="bottom">with a repository or other infrastructure as required.</p>
+      <p begin="00:10:28:00" end="00:10:31:00" region="bottom">I'll give an example of that.</p>
+      <p begin="00:10:32:00" end="00:10:35:00" region="bottom">So we have here create character.</p>
+      <p begin="00:10:35:00" end="00:10:38:00" region="bottom">You'll see that it receives create</p>
+      <p begin="00:10:38:00" end="00:10:42:00" region="bottom">character request DTO, and it returns,</p>
+      <p begin="00:10:42:00" end="00:10:43:00" region="bottom">create character response DTO.</p>
+      <p begin="00:10:43:00" end="00:10:46:00" region="bottom">What it does there on line 39,</p>
+      <p begin="00:10:46:00" end="00:10:49:00" region="bottom">is notice the request.attributes,</p>
+      <p begin="00:10:49:00" end="00:10:52:00" region="bottom">dot model_dump.</p>
+      <p begin="00:10:53:00" end="00:10:55:00" region="bottom">What it does over there, it unpacks the DTO,</p>
+      <p begin="00:10:55:00" end="00:10:58:00" region="bottom">gets all the data of the DTO, and then,</p>
+      <p begin="00:10:58:00" end="00:11:02:00" region="bottom">it creates</p>
+      <p begin="00:11:02:00" end="00:11:04:00" region="bottom">a character attribute model.</p>
+      <p begin="00:11:04:00" end="00:11:06:00" region="bottom">So that's the first thing we're doing: creating the</p>
+      <p begin="00:11:07:00" end="00:11:10:00" region="bottom">character attributes over there, and that also forms</p>
+      <p begin="00:11:10:00" end="00:11:13:00" region="bottom">part of the creation of the character model on line 35.</p>
+      <p begin="00:11:13:00" end="00:11:15:00" region="bottom">So character equals Character(</p>
+      <p begin="00:11:15:00" end="00:11:18:00" region="bottom">We're putting in an ID, which is new_id, a function</p>
+      <p begin="00:11:18:00" end="00:11:21:00" region="bottom">that generates a new ID for us.</p>
+      <p begin="00:11:21:00" end="00:11:24:00" region="bottom">Name and health, and then also the</p>
+      <p begin="00:11:25:00" end="00:11:27:00" region="bottom">attributes, and that's creating the character.</p>
+      <p begin="00:11:27:00" end="00:11:30:00" region="bottom">Then we're sending that to the repository.</p>
+      <p begin="00:11:30:00" end="00:11:32:00" region="bottom">You always want to send—and we'll look into detail on this—</p>
+      <p begin="00:11:32:00" end="00:11:35:00" region="bottom">but you want to send the actual object to the repository,</p>
+      <p begin="00:11:35:00" end="00:11:37:00" region="bottom">not the DTO object.</p>
+      <p begin="00:11:38:00" end="00:11:42:00" region="bottom">Okay, update character attribute.</p>
+      <p begin="00:11:42:00" end="00:11:45:00" region="bottom">This is the update function.</p>
+      <p begin="00:11:45:00" end="00:11:49:00" region="bottom">And then get character.</p>
+      <p begin="00:11:49:00" end="00:11:51:00" region="bottom">API.</p>
+      <p begin="00:11:51:00" end="00:11:54:00" region="bottom">So, notice how simple the API is.</p>
+      <p begin="00:11:54:00" end="00:11:56:00" region="bottom">We don't have any logic in here, and this</p>
+      <p begin="00:11:56:00" end="00:11:57:00" region="bottom">is the command line interface as well.</p>
+      <p begin="00:11:59:00" end="00:12:00:00" region="bottom">What I want you to notice</p>
+      <p begin="00:12:00:00" end="00:12:04:00" region="bottom">here is the command line.</p>
+      <p begin="00:12:04:00" end="00:12:07:00" region="bottom">Let's go to</p>
+      <p begin="00:12:07:00" end="00:12:09:00" region="bottom">for example, create.</p>
+      <p begin="00:12:09:00" end="00:12:11:00" region="bottom">What it does is exactly the same as the API.</p>
+      <p begin="00:12:11:00" end="00:12:13:00" region="bottom">And this is why I wanted to have two—</p>
+      <p begin="00:12:13:00" end="00:12:15:00" region="bottom">I wanted to have the API as well as the command line</p>
+      <p begin="00:12:15:00" end="00:12:17:00" region="bottom">interface. You can notice the pattern.</p>
+      <p begin="00:12:18:00" end="00:12:21:00" region="bottom">All we're doing is packing it in the data transfer</p>
+      <p begin="00:12:21:00" end="00:12:24:00" region="bottom">object and sending it to the application layer.</p>
+      <p begin="00:12:25:00" end="00:12:28:00" region="bottom">From that point onwards, everything stays the same.</p>
+      <p begin="00:12:28:00" end="00:12:30:00" region="bottom">We don't have anything in the application layer that knows about</p>
+      <p begin="00:12:30:00" end="00:12:33:00" region="bottom">FastAPI or the command line interface.</p>
+      <p begin="00:12:33:00" end="00:12:35:00" region="bottom">All we know is there's a data transfer object coming in,</p>
+      <p begin="00:12:35:00" end="00:12:38:00" region="bottom">and we're unpacking that and doing a create.</p>
+      <p begin="00:12:39:00" end="00:12:42:00" region="bottom">Whether that comes in</p>
+      <p begin="00:12:42:00" end="00:12:45:00" region="bottom">for example, imagine that you have some gRPC</p>
+      <p begin="00:12:45:00" end="00:12:48:00" region="bottom">or you have some other type of call.</p>
+      <p begin="00:12:48:00" end="00:12:50:00" region="bottom">Or maybe you have</p>
+      <p begin="00:12:50:00" end="00:12:52:00" region="bottom">command line, FastAPI.</p>
+      <p begin="00:12:52:00" end="00:12:56:00" region="bottom">Maybe you want to add a different type of API or an event—a</p>
+      <p begin="00:12:56:00" end="00:12:58:00" region="bottom">good example—an event that gets absorbed and you want to create</p>
+      <p begin="00:12:58:00" end="00:13:00:00" region="bottom">a character, you'll do exactly the same thing.</p>
+      <p begin="00:13:01:00" end="00:13:03:00" region="bottom">Pack it into a DTO object, send it off to the application layer.</p>
+      <p begin="00:13:03:00" end="00:13:05:00" region="bottom">Create character in the application layer and that's it.</p>
+      <p begin="00:13:06:00" end="00:13:09:00" region="bottom">You don't worry about that.</p>
+      <p begin="00:13:09:00" end="00:13:11:00" region="bottom">In that way, you are creating a loosely coupled</p>
+      <p begin="00:13:11:00" end="00:13:14:00" region="bottom">system, which makes it easy to change.</p>
+      <p begin="00:13:14:00" end="00:13:17:00" region="bottom">The moment you have a tightly coupled system,</p>
+      <p begin="00:13:17:00" end="00:13:19:00" region="bottom">if anything changes, then you need to</p>
+      <p begin="00:13:20:00" end="00:13:21:00" region="bottom">try and figure out where all the dependencies are and what needs to change.</p>
+      <p begin="00:13:21:00" end="00:13:24:00" region="bottom">And that was a quick walkthrough</p>
+      <p begin="00:13:24:00" end="00:13:27:00" region="bottom">for the implementation of Episode 2.</p>
+      <p begin="00:13:27:00" end="00:13:30:00" region="bottom">I will see you in the next version, in the next episode.</p>
+      <p begin="00:13:30:00" end="00:13:33:00" region="bottom">I hope this was helpful. If there's anything that</p>
+      <p begin="00:13:33:00" end="00:13:37:00" region="bottom">you want me to zoom in on,</p>
+      <p begin="00:13:37:00" end="00:13:40:00" region="bottom">let me know.</p>
+      <p begin="00:13:40:00" end="00:13:43:00" region="bottom">Is there any of this that you want me to expand on?</p>
+      <p begin="00:13:43:00" end="00:13:48:00" region="bottom">I'm going to make these walkthroughs quicker,</p>
+      <p begin="00:13:48:00" end="00:13:51:00" region="bottom">so it takes a little bit less time, but there is obviously the</p>
+      <p begin="00:13:51:00" end="00:13:52:00" region="bottom">chance that you might want me to expand on anything here.</p>
+      <p begin="00:13:52:00" end="00:13:53:00" region="bottom">Just let me know and I'm looking forward to seeing you on the</p>
+      <p begin="00:13:53:00" end="00:13:55:00" region="bottom">instructions for Episode 3.</p>
+      <p begin="00:13:56:00" end="00:13:59:00" region="bottom">Thank you.</p>
+      <p begin="00:13:59:00" end="00:14:03:00" region="bottom"></p>
+      <p begin="00:14:03:00" end="00:14:06:00" region="bottom"></p>
+      <p begin="00:14:06:00" end="00:14:09:00" region="bottom"></p>
+      <p begin="00:14:09:00" end="00:14:12:00" region="bottom"></p>
+      <p begin="00:14:12:00" end="00:14:13:00" region="bottom"></p>
     </div>
   </body>
 </tt>

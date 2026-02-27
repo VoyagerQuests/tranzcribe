@@ -4,6 +4,7 @@
 from pathlib import Path
 
 from transcribe_enhance.domain.models import Instructions
+from transcribe_enhance.infrastructure.ai_openai import enhance_segments_openai
 from transcribe_enhance.infrastructure.itt_parser import parse_itt
 from transcribe_enhance.infrastructure.itt_writer import write_itt
 
@@ -29,6 +30,7 @@ def run_pipeline(
     instructions: Instructions,
     output_path: Path,
     allow_timing_adjust: bool,
+    enable_ai: bool,
 ) -> None:
     # TODO: validate inputs, run rules, call AI providers
     _ = audio_path
@@ -37,8 +39,15 @@ def run_pipeline(
     parsed = parse_itt(itt_path)
     original_text = itt_path.read_text(encoding="utf-8")
 
-    if _segments_unchanged(parsed, parsed.segments):
+    segments = parsed.segments
+    if enable_ai:
+        if instructions.ai.provider == "openai":
+            segments = enhance_segments_openai(segments, instructions)
+        else:
+            raise ValueError(f"Unsupported AI provider: {instructions.ai.provider}")
+
+    if _segments_unchanged(parsed, segments):
         output_path.write_text(original_text, encoding="utf-8")
         return
 
-    write_itt(output_path, original_text, parsed, parsed.segments)
+    write_itt(output_path, original_text, parsed, segments)
