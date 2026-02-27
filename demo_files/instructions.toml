@@ -1,0 +1,21 @@
+[context]
+purpose = "Walkthrough of Quest1 Episode 2 implementation"
+audience = "Developers"
+tone = "clear, instructional"
+details_path = "details.md"
+
+[output_rules]
+max_chars_per_line = 42
+max_lines_per_caption = 2
+max_reading_speed_cps = 17
+min_duration_ms = 700
+max_duration_ms = 6000
+line_break_style = "punctuation"
+casing = "sentence"
+punctuation = "standard"
+profanity_policy = "mask"
+
+[ai]
+provider = "openai"
+model = "gpt-4.1"
+temperature = 0.2
