@@ -1,6 +1,5 @@
-"""Parse iTT (TTML) into domain segments."""
+"""Parse iTT (TTML) into domain segments while preserving metadata."""
 
-from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
@@ -11,7 +10,11 @@ from transcribe_enhance.domain.models import Segment
 
 @dataclass(frozen=True)
 class ParsedItt:
+    tree: ET.ElementTree
+    root: ET.Element
     segments: list[Segment]
+    p_elements: list[ET.Element]
+    namespaces: dict[str, str]
 
 
 def _parse_timecode(timecode: str) -> int:
@@ -36,11 +39,19 @@ def _parse_timecode(timecode: str) -> int:
     return total_ms
 
 
-def parse_itt(path: Path) -> list[Segment]:
+def parse_itt(path: Path) -> ParsedItt:
+    namespaces: dict[str, str] = {}
+    for event, data in ET.iterparse(path, events=("start-ns",)):
+        prefix, uri = data
+        if prefix in namespaces:
+            continue
+        namespaces[prefix] = uri
+
     tree = ET.parse(path)
     root = tree.getroot()
 
     segments: list[Segment] = []
+    p_elements: list[ET.Element] = []
     for elem in root.iter():
         if elem.tag.endswith("p"):
             begin = elem.attrib.get("begin")
@@ -55,5 +66,12 @@ def parse_itt(path: Path) -> list[Segment]:
                     text=text,
                 )
             )
+            p_elements.append(elem)
 
-    return segments
+    return ParsedItt(
+        tree=tree,
+        root=root,
+        segments=segments,
+        p_elements=p_elements,
+        namespaces=namespaces,
+    )

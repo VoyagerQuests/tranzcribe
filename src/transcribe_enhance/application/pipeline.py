@@ -1,6 +1,5 @@
 """Application pipeline orchestration."""
 
-from __future__ import annotations
 
 from pathlib import Path
 
@@ -20,5 +19,5 @@ def run_pipeline(
     _ = audio_path
     _ = allow_timing_adjust
 
-    segments = parse_itt(itt_path)
-    write_itt(output_path, segments)
+    parsed = parse_itt(itt_path)
+    write_itt(output_path, parsed, parsed.segments)

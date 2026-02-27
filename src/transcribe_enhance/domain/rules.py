@@ -1,6 +1,5 @@
 """Rules and utilities to enforce subtitle constraints."""
 
-from __future__ import annotations
 
 from transcribe_enhance.domain.models import OutputRules, Segment
 
