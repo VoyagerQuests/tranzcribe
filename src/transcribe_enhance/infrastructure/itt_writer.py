@@ -1,8 +1,9 @@
-"""Serialize domain segments into iTT (TTML)."""
+"""Patch iTT (TTML) while preserving original formatting."""
 
 
 from pathlib import Path
-from xml.etree import ElementTree as ET
+import re
+from xml.sax.saxutils import escape
 
 from transcribe_enhance.domain.models import Segment
 from transcribe_enhance.infrastructure.itt_parser import ParsedItt
@@ -30,44 +31,76 @@ def _format_timecode_like(original: str, ms: int, frame_rate: float | None) -> s
     return _format_timecode(ms)
 
 
-def _register_namespaces(namespaces: dict[str, str]) -> None:
-    for prefix, uri in namespaces.items():
-        ET.register_namespace(prefix, uri)
+def _replace_attr(tag: str, name: str, value: str) -> str:
+    pattern_double = rf'(\b{name}=")([^"]*)(")'
+    pattern_single = rf"(\b{name}=')([^']*)(')"
+    if re.search(pattern_double, tag):
+        return re.sub(pattern_double, rf'\g<1>{value}\g<3>', tag, count=1)
+    if re.search(pattern_single, tag):
+        return re.sub(pattern_single, rf'\g<1>{value}\g<3>', tag, count=1)
+    return tag
 
 
-def write_itt(path: Path, parsed: ParsedItt, segments: list[Segment]) -> None:
-    if len(parsed.p_elements) != len(segments):
+def _patch_itt_text(original_text: str, parsed: ParsedItt, segments: list[Segment]) -> str:
+    pattern = re.compile(
+        r'(?P<open><(?P<prefix>\w+:)?p\b[^>]*>)'
+        r'(?P<inner>.*?)'
+        r'(?P<close></(?(prefix)(?P=prefix))p>)',
+        re.DOTALL,
+    )
+
+    matches = list(pattern.finditer(original_text))
+    if len(matches) != len(segments):
         raise ValueError(
             "Segment count does not match original iTT structure. "
-            "Refusing to write to avoid corrupting the document."
+            "Refusing to patch to avoid corrupting the document."
         )
 
-    _register_namespaces(parsed.namespaces)
-
-    for idx, (elem, segment) in enumerate(zip(parsed.p_elements, segments, strict=True)):
+    parts: list[str] = []
+    last_end = 0
+    for idx, match in enumerate(matches):
+        segment = segments[idx]
         original_begin, original_end = parsed.original_timecodes[idx]
-        original_text = parsed.original_texts[idx]
+        original_text_value = parsed.original_texts[idx]
 
         begin = _format_timecode_like(original_begin, segment.start_ms, parsed.frame_rate)
         end = _format_timecode_like(original_end, segment.end_ms, parsed.frame_rate)
 
-        # If nothing changed, preserve original element exactly.
-        if segment.text == original_text and begin == original_begin and end == original_end:
+        open_tag = match.group("open")
+        inner = match.group("inner")
+        close_tag = match.group("close")
+
+        text_changed = segment.text != original_text_value
+        time_changed = begin != original_begin or end != original_end
+
+        if not text_changed and not time_changed:
+            parts.append(original_text[last_end : match.end()])
+            last_end = match.end()
             continue
 
-        existing_attrib = dict(elem.attrib)
-        existing_children = list(elem)
+        new_open = _replace_attr(open_tag, "begin", begin)
+        new_open = _replace_attr(new_open, "end", end)
 
-        # Replace text content while preserving element attributes.
-        elem.clear()
-        elem.attrib.update(existing_attrib)
-        elem.attrib["begin"] = begin
-        elem.attrib["end"] = end
-        elem.text = segment.text
+        if text_changed:
+            new_inner = escape(segment.text)
+        else:
+            new_inner = inner
 
-        # Preserve child elements only if they were originally present and text unchanged.
-        # If text changed, we drop children to avoid mismatched spans.
-        if segment.text == original_text and existing_children:
-            elem[:] = existing_children
+        parts.append(original_text[last_end : match.start()])
+        parts.append(new_open)
+        parts.append(new_inner)
+        parts.append(close_tag)
+        last_end = match.end()
 
-    parsed.tree.write(path, encoding="utf-8", xml_declaration=True)
+    parts.append(original_text[last_end:])
+    return "".join(parts)
+
+
+def write_itt(
+    path: Path,
+    original_text: str,
+    parsed: ParsedItt,
+    segments: list[Segment],
+) -> None:
+    patched = _patch_itt_text(original_text, parsed, segments)
+    path.write_text(patched, encoding="utf-8")

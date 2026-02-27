@@ -35,9 +35,10 @@ def run_pipeline(
     _ = allow_timing_adjust
 
     parsed = parse_itt(itt_path)
+    original_text = itt_path.read_text(encoding="utf-8")
 
     if _segments_unchanged(parsed, parsed.segments):
-        output_path.write_bytes(itt_path.read_bytes())
+        output_path.write_text(original_text, encoding="utf-8")
         return
 
-    write_itt(output_path, parsed, parsed.segments)
+    write_itt(output_path, original_text, parsed, parsed.segments)
