@@ -103,6 +103,19 @@ def run_pipeline(
         else:
             raise ValueError(f"Unsupported AI provider: {instructions.ai.provider}")
 
+    # Always preserve original timing for now.
+    for idx, segment in enumerate(segments):
+        original_segment = parsed.segments[idx]
+        if (
+            segment.start_ms != original_segment.start_ms
+            or segment.end_ms != original_segment.end_ms
+        ):
+            segments[idx] = type(segment)(
+                start_ms=original_segment.start_ms,
+                end_ms=original_segment.end_ms,
+                text=segment.text,
+            )
+
     if _segments_unchanged(parsed, segments):
         output_path.write_text(original_text, encoding="utf-8")
         _write_changes(output_path, parsed, segments)
