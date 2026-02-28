@@ -5,10 +5,25 @@ build/
 dist/
 wheels/
 *.egg-info
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
 # Virtual environments
 .venv
+.env
+.env.*
 
 # Generated output files
-# *.changes.txt
-# demo_files/output.itt
+*.changes.txt
+demo_files/output.itt
+
+# UV
+.uv/
+uv.lock
+.cache/uv/
+
+# macOS
+.DS_Store
