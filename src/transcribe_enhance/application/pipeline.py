@@ -4,7 +4,6 @@
 from pathlib import Path
 
 from transcribe_enhance.domain.models import Instructions
-from transcribe_enhance.domain.command_glossary import enforce_command_glossary
 from transcribe_enhance.infrastructure.ai_openai import enhance_segments_openai
 from transcribe_enhance.infrastructure.itt_parser import parse_itt
 from transcribe_enhance.infrastructure.itt_writer import write_itt
@@ -103,8 +102,6 @@ def run_pipeline(
             segments = enhance_segments_openai(segments, instructions)
         else:
             raise ValueError(f"Unsupported AI provider: {instructions.ai.provider}")
-
-    segments = enforce_command_glossary(segments)
 
     if _segments_unchanged(parsed, segments):
         output_path.write_text(original_text, encoding="utf-8")

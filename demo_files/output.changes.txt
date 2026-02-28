@@ -24,28 +24,28 @@ Index: 3
 Original Time: 00:00:15:00 --> 00:00:19:00
 New Time: 00:00:15.000 --> 00:00:19.000
 Before: Where where we're looking at the
-After: Where we're looking at the
+After: Here, we're looking at the
 
 Change 5
+Index: 5
+Original Time: 00:00:22:00 --> 00:00:24:00
+New Time: 00:00:22.000 --> 00:00:24.000
+Before: So this is going to be a
+After: This is going to be a
+
+Change 6
 Index: 6
 Original Time: 00:00:25:00 --> 00:00:29:00
 New Time: 00:00:25.000 --> 00:00:29.000
 Before: lot of new information, and if you feel a little bit overwhelmed
-After: lot of new information, and if you feel a little overwhelmed
+After: lot of new information, and if you feel a bit overwhelmed
 
-Change 6
+Change 7
 Index: 7
 Original Time: 00:00:29:00 --> 00:00:32:00
 New Time: 00:00:29.000 --> 00:00:32.000
 Before: with the amount of info, Don't worry
-After: with the amount of info, don't worry.
-
-Change 7
-Index: 8
-Original Time: 00:00:32:00 --> 00:00:35:00
-New Time: 00:00:32.000 --> 00:00:35.000
-Before: because every episode after this, we're going
-After: Because every episode after this, we're going
+After: by the amount of info, don't worry,
 
 Change 8
 Index: 9
@@ -76,1079 +76,1702 @@ Before: 3, start looking at layered architecture.
 After: 3, we'll start looking at layered architecture.
 
 Change 12
+Index: 14
+Original Time: 00:00:53:00 --> 00:00:56:00
+New Time: 00:00:53.000 --> 00:00:56.000
+Before: So let's go through what's
+After: Let's go through what's
+
+Change 13
+Index: 16
+Original Time: 00:00:58:00 --> 00:01:01:00
+New Time: 00:00:58.000 --> 00:01:01.000
+Before: Okay, so you can clone our code.
+After: You can clone our code.
+
+Change 14
+Index: 17
+Original Time: 00:01:01:00 --> 00:01:02:00
+New Time: 00:01:01.000 --> 00:01:02.000
+Before: I would suggest you do this.
+After: I suggest you do this.
+
+Change 15
 Index: 18
 Original Time: 00:01:02:00 --> 00:01:04:00
 New Time: 00:01:02.000 --> 00:01:04.000
 Before: Get clown.
 After: Git clone.
 
-Change 13
+Change 16
+Index: 19
+Original Time: 00:01:04:00 --> 00:01:07:00
+New Time: 00:01:04.000 --> 00:01:07.000
+Before: And go into quest one,
+After: Then go into quest one,
+
+Change 17
 Index: 20
 Original Time: 00:01:08:00 --> 00:01:13:00
 New Time: 00:01:08.000 --> 00:01:13.000
 Before: and then change the branch to Episode two.
-After: and then change the branch to episode two.
+After: and change the branch to Episode 2.
 
-Change 14
+Change 18
 Index: 21
 Original Time: 00:01:13:00 --> 00:01:17:00
 New Time: 00:01:13.000 --> 00:01:17.000
 Before: So this will give you the code
 After: This will give you the code
 
-Change 15
+Change 19
 Index: 22
 Original Time: 00:01:17:00 --> 00:01:20:00
 New Time: 00:01:17.000 --> 00:01:20.000
 Before: that I wrote for this episode, UV
-After: that I wrote for this episode. Uvicorn
+After: that I wrote for this episode. Use
 
-Change 16
+Change 20
 Index: 23
 Original Time: 00:01:20:00 --> 00:01:23:00
 New Time: 00:01:20.000 --> 00:01:23.000
 Before: sync, and then you can run the fast
-After: sync, and then you can run the Fast
+After: uvicorn, and then you can run the Fast
 
-Change 17
+Change 21
 Index: 24
 Original Time: 00:01:23:00 --> 00:01:24:00
 New Time: 00:01:23.000 --> 00:01:24.000
 Before: API in Dave.
 After: API in dev.
 
-Change 18
+Change 22
+Index: 25
+Original Time: 00:01:25:00 --> 00:01:28:00
+New Time: 00:01:25.000 --> 00:01:28.000
+Before: And this is what we'll look at.
+After: This is what we'll look at.
+
+Change 23
 Index: 27
 Original Time: 00:01:29:00 --> 00:01:32:00
 New Time: 00:01:29.000 --> 00:01:32.000
 Before: There's a few things I want to point out over here.
 After: There are a few things I want to point out here.
 
-Change 19
+Change 24
 Index: 28
 Original Time: 00:01:32:00 --> 00:01:36:00
 New Time: 00:01:32.000 --> 00:01:36.000
 Before: Look at the schema, that the schema enforces.
 After: Look at the schema, and what the schema enforces.
 
-Change 20
+Change 25
 Index: 29
 Original Time: 00:01:36:00 --> 00:01:40:00
 New Time: 00:01:36.000 --> 00:01:40.000
 Before: So notice name over there, name constraint
-After: Notice the name constraint over there.
+After: Notice the name constraint over there,
 
-Change 21
+Change 26
 Index: 30
 Original Time: 00:01:40:00 --> 00:01:42:00
 New Time: 00:01:40.000 --> 00:01:42.000
 Before: is between 10 and 100.
-After: It's between 10 and 100.
+After: which is between 10 and 100.
 
-Change 22
+Change 27
 Index: 31
 Original Time: 00:01:42:00 --> 00:01:45:00
 New Time: 00:01:42.000 --> 00:01:45.000
 Before: And also health constraint between 0
 After: Also, the health constraint is between 0
 
-Change 23
+Change 28
 Index: 32
 Original Time: 00:01:45:00 --> 00:01:48:00
 New Time: 00:01:45.000 --> 00:01:48.000
 Before: and 100, and also the attribute constraints
 After: and 100, and the attribute constraints
 
-Change 24
+Change 29
 Index: 33
 Original Time: 00:01:49:00 --> 00:01:50:00
 New Time: 00:01:49.000 --> 00:01:50.000
 Before: between 0 and 100.
-After: are between 0 and 100.
+After: are also between 0 and 100.
 
-Change 25
+Change 30
 Index: 34
 Original Time: 00:01:50:00 --> 00:01:54:00
 New Time: 00:01:50.000 --> 00:01:54.000
 Before: notice how it's appearing in the fast API documentation.
 After: Notice how it's appearing in the FastAPI documentation.
 
-Change 26
+Change 31
 Index: 35
 Original Time: 00:02:04:00 --> 00:02:07:00
 New Time: 00:02:04.000 --> 00:02:07.000
 Before: Same with with all of these different schemas.
 After: Same with all of these different schemas.
 
-Change 27
+Change 32
 Index: 36
 Original Time: 00:02:07:00 --> 00:02:09:00
 New Time: 00:02:07.000 --> 00:02:09.000
 Before: You'll see that same constraints appearing here.
 After: You'll see those same constraints appearing here.
 
-Change 28
+Change 33
 Index: 38
 Original Time: 00:02:14:00 --> 00:02:18:00
 New Time: 00:02:14.000 --> 00:02:18.000
 Before: So I'm going to dry it out.
-After: So I'm going to try it out.
+After: I'm going to try it out.
 
-Change 29
+Change 34
 Index: 39
 Original Time: 00:02:18:00 --> 00:02:21:00
 New Time: 00:02:18.000 --> 00:02:21.000
 Before: Firstly, let's taste one of those constraints.
 After: First, let's test one of those constraints.
 
-Change 30
+Change 35
 Index: 43
 Original Time: 00:02:30:00 --> 00:02:32:00
 New Time: 00:02:30.000 --> 00:02:32.000
 Before: That the 1st constraint I point pointed out earlier.
 After: That's the first constraint I pointed out earlier.
 
-Change 31
+Change 36
 Index: 45
 Original Time: 00:02:36:00 --> 00:02:38:00
 New Time: 00:02:36.000 --> 00:02:38.000
 Before: the white, that should work.
 After: the White, that should work.
 
-Change 32
+Change 37
 Index: 46
 Original Time: 00:02:38:00 --> 00:02:42:00
 New Time: 00:02:38.000 --> 00:02:42.000
 Before: There we go again, all the white was created.
 After: There we go, Gandalf the White was created.
 
-Change 33
+Change 38
 Index: 48
 Original Time: 00:02:45:00 --> 00:02:47:00
 New Time: 00:02:45.000 --> 00:02:47.000
 Before: it did create and it returned.
 After: it did create and return.
 
-Change 34
+Change 39
 Index: 50
 Original Time: 00:02:50:00 --> 00:02:54:00
 New Time: 00:02:50.000 --> 00:02:54.000
 Before: to just do use that ID and select Gandalf, see?
 After: to just use that ID and select Gandalf, see?
 
-Change 35
+Change 40
 Index: 51
 Original Time: 00:02:54:00 --> 00:02:57:00
 New Time: 00:02:54.000 --> 00:02:57.000
 Before: So this is coming from the Jason file back into
 After: So this is coming from the JSON file back into
 
-Change 36
+Change 41
 Index: 53
 Original Time: 00:02:59:00 --> 00:03:00:00
 New Time: 00:02:59.000 --> 00:03:00.000
 Before: IPI returns it.
 After: API returns it.
 
-Change 37
+Change 42
 Index: 55
 Original Time: 00:03:03:00 --> 00:03:06:00
 New Time: 00:03:03.000 --> 00:03:06.000
 Before: I'm firstly going to show you how we get a
 After: I'm first going to show you how we get a
 
-Change 38
+Change 43
 Index: 58
 Original Time: 00:03:12:00 --> 00:03:14:00
 New Time: 00:03:12.000 --> 00:03:14.000
 Before: to update presents to 120.
 After: to update presence to 120.
 
-Change 39
+Change 44
 Index: 60
 Original Time: 00:03:16:00 --> 00:03:19:00
 New Time: 00:03:16.000 --> 00:03:19.000
 Before: So we have your input, should be less than or equal to 100.
-After: So here, input should be less than or equal to 100.
+After: Here, your input should be less than or equal to 100.
 
-Change 40
+Change 45
 Index: 62
 Original Time: 00:03:23:00 --> 00:03:26:00
 New Time: 00:03:23.000 --> 00:03:26.000
 Before: an unexpected attribute to
 After: unexpected attribute to
 
-Change 41
+Change 46
 Index: 63
 Original Time: 00:03:26:00 --> 00:03:30:00
 New Time: 00:03:26.000 --> 00:03:30.000
 Before: your taste, just putting any value, 100.
 After: your test, just putting any value, 100.
 
-Change 42
+Change 47
 Index: 65
 Original Time: 00:03:34:00 --> 00:03:36:00
 New Time: 00:03:34.000 --> 00:03:36.000
 Before: So we have now 2 error messages here.
-After: So we have now two error messages here.
+After: Now we have two error messages here.
 
-Change 43
+Change 48
 Index: 66
 Original Time: 00:03:37:00 --> 00:03:40:00
 New Time: 00:03:37.000 --> 00:03:40.000
 Before: The 2nd one extra inputs are not permitted.
 After: The second one: extra inputs are not permitted.
 
-Change 44
+Change 49
 Index: 68
 Original Time: 00:03:45:00 --> 00:03:48:00
 New Time: 00:03:45.000 --> 00:03:48.000
 Before: I'm going to update 3 attribute, send
 After: I'm going to update three attributes, send
 
-Change 45
+Change 50
 Index: 73
 Original Time: 00:04:04:00 --> 00:04:07:00
 New Time: 00:04:04.000 --> 00:04:07.000
 Before: So Gandalf would updated 859995
 After: So Gandalf was updated: 85, 99, 95
 
-Change 46
+Change 51
 Index: 74
 Original Time: 00:04:07:00 --> 00:04:09:00
 New Time: 00:04:07.000 --> 00:04:09.000
 Before: on my agility vitality.
-After: on my agility, vitality.
+After: on my agility and vitality.
 
-Change 47
+Change 52
 Index: 76
 Original Time: 00:04:13:00 --> 00:04:16:00
 New Time: 00:04:13.000 --> 00:04:16.000
 Before: All of this comes from the open
 After: All of this comes from the Open
 
-Change 48
+Change 53
 Index: 78
 Original Time: 00:04:18:00 --> 00:04:21:00
 New Time: 00:04:18.000 --> 00:04:21.000
 Before: So this is the open eye API spec that's automatically
-After: So this is the OpenAPI spec that's automatically
+After: This is the OpenAPI spec that's automatically
 
-Change 49
+Change 54
 Index: 79
 Original Time: 00:04:21:00 --> 00:04:24:00
 New Time: 00:04:21.000 --> 00:04:24.000
 Before: written for us by fast API and then swagger
-After: written for us by FastAPI, and then Swagger
+After: written for us by FastAPI, and then the Swagger
 
-Change 50
+Change 55
 Index: 80
 Original Time: 00:04:24:00 --> 00:04:28:00
 New Time: 00:04:24.000 --> 00:04:28.000
 Before: user interface uses this to build that user interface we just used.
-After: UI uses this to build the user interface we just used.
+After: user interface uses this to build the UI we just used.
 
-Change 51
+Change 56
 Index: 82
 Original Time: 00:04:33:00 --> 00:04:36:00
 New Time: 00:04:33.000 --> 00:04:36.000
 Before: another document system that ships with fast IPI.
 After: another documentation system that ships with FastAPI.
 
-Change 52
+Change 57
 Index: 83
 Original Time: 00:04:36:00 --> 00:04:37:00
 New Time: 00:04:36.000 --> 00:04:37.000
 Before: RedDoc.
 After: Redoc.
 
-Change 53
+Change 58
 Index: 84
 Original Time: 00:04:37:00 --> 00:04:39:00
 New Time: 00:04:37.000 --> 00:04:39.000
 Before: This is a great example of redock of here.
 After: This is a great example of Redoc here.
 
-Change 54
+Change 59
 Index: 85
 Original Time: 00:04:40:00 --> 00:04:43:00
 New Time: 00:04:40.000 --> 00:04:43.000
 Before: Redok doesn't allow you to taste the IPI
 After: Redoc doesn't allow you to test the API
 
-Change 55
+Change 60
 Index: 86
 Original Time: 00:04:43:00 --> 00:04:46:00
 New Time: 00:04:43.000 --> 00:04:46.000
 Before: as nicely as you do with swagger IPI, but it does
 After: as nicely as you do with Swagger UI, but it does
 
-Change 56
+Change 61
 Index: 87
 Original Time: 00:04:46:00 --> 00:04:49:00
 New Time: 00:04:46.000 --> 00:04:49.000
 Before: give you an, in my opinion, sometimes a
 After: give you, in my opinion, sometimes a
 
-Change 57
+Change 62
 Index: 88
 Original Time: 00:04:49:00 --> 00:04:52:00
 New Time: 00:04:49.000 --> 00:04:52.000
 Before: nicer, navigation through the API.
 After: nicer navigation through the API.
 
-Change 58
+Change 63
 Index: 90
 Original Time: 00:04:58:00 --> 00:05:01:00
 New Time: 00:04:58.000 --> 00:05:01.000
 Before: And we'll move on from here.
 After: and we'll move on from here.
 
-Change 59
+Change 64
+Index: 91
+Original Time: 00:05:01:00 --> 00:05:03:00
+New Time: 00:05:01.000 --> 00:05:03.000
+Before: So what I'm going to do now is show you the
+After: Now I'm going to show you the
+
+Change 65
 Index: 92
 Original Time: 00:05:03:00 --> 00:05:05:00
 New Time: 00:05:03.000 --> 00:05:05.000
 Before: come online interface.
 After: command line interface.
 
-Change 60
+Change 66
 Index: 94
 Original Time: 00:05:09:00 --> 00:05:12:00
 New Time: 00:05:09.000 --> 00:05:12.000
 Before: which we just created and updated, just so you see it in the Jason file.
 After: which we just created and updated, just so you see it in the JSON file.
 
-Change 61
+Change 67
 Index: 95
 Original Time: 00:05:12:00 --> 00:05:15:00
 New Time: 00:05:12.000 --> 00:05:15.000
 Before: So the 1st thing in order to
-After: So the first thing in order to
+After: The first thing in order to
 
-Change 62
+Change 68
+Index: 96
+Original Time: 00:05:15:00 --> 00:05:17:00
+New Time: 00:05:15.000 --> 00:05:17.000
+Before: run the API.
+After: run the API,
+
+Change 69
 Index: 97
 Original Time: 00:05:18:00 --> 00:05:21:00
 New Time: 00:05:18.000 --> 00:05:21.000
 Before: Will use UVPip
-After: We'll use pip install -e .
+After: is use pip install -e . which installs
 
-Change 63
+Change 70
 Index: 98
 Original Time: 00:05:22:00 --> 00:05:25:00
 New Time: 00:05:22.000 --> 00:05:25.000
 Before: install minus E dot, which installs
-After: which installs
+After: our package as editable in the local environment.
 
-Change 64
+Change 71
 Index: 99
 Original Time: 00:05:25:00 --> 00:05:29:00
 New Time: 00:05:25.000 --> 00:05:29.000
 Before: our package as an editable in the local environment.
-After: our package as editable in the local environment.
+After: It will also give me the ability to just use 'character'.
 
-Change 65
+Change 72
 Index: 100
 Original Time: 00:05:29:00 --> 00:05:32:00
 New Time: 00:05:29.000 --> 00:05:32.000
 Before: It will also give me the ability of just using character.
-After: It will also give me the ability to just use 'character'.
+After: Once I source into the virtual environment like I'm doing here,
 
-Change 66
+Change 73
+Index: 101
+Original Time: 00:05:32:00 --> 00:05:35:00
+New Time: 00:05:32.000 --> 00:05:35.000
+Before: Once I source into the virtual environment like I'm doing here.
+After: then I'll type 'character' and that shows you that
+
+Change 74
 Index: 102
 Original Time: 00:05:35:00 --> 00:05:38:00
 New Time: 00:05:35.000 --> 00:05:38.000
 Before: And then I'll type character and that shows you that
-After: And then I'll type 'character' and that shows you that
+After: the command line interface is working.
 
-Change 67
+Change 75
+Index: 103
+Original Time: 00:05:38:00 --> 00:05:40:00
+New Time: 00:05:38.000 --> 00:05:40.000
+Before: the command line interface is working.
+After: So inside the README file,
+
+Change 76
 Index: 104
 Original Time: 00:05:41:00 --> 00:05:44:00
 New Time: 00:05:41.000 --> 00:05:44.000
 Before: So inside the read me file,
-After: So inside the README file,
+After: you'll see an example of the command line interface usage.
 
-Change 68
+Change 77
+Index: 105
+Original Time: 00:05:44:00 --> 00:05:47:00
+New Time: 00:05:44.000 --> 00:05:47.000
+Before: you'll see an example of the command line interface usage.
+After: I'm just copying that.
+
+Change 78
+Index: 106
+Original Time: 00:05:47:00 --> 00:05:48:00
+New Time: 00:05:47.000 --> 00:05:48.000
+Before: I'm just copying that.
+After: So, let me just
+
+Change 79
+Index: 107
+Original Time: 00:05:48:00 --> 00:05:51:00
+New Time: 00:05:48.000 --> 00:05:51.000
+Before: So, let me just
+After: go to the front here and use 'character' to initiate—oh, that's it.
+
+Change 80
 Index: 108
 Original Time: 00:05:51:00 --> 00:05:58:00
 New Time: 00:05:51.000 --> 00:05:58.000
 Before: go to the front of here and use character to initiate, oh, that's it.
-After: go to the front here and use 'character' to initiate—oh, that's it.
+After: That's all I saw on the black.
 
-Change 69
+Change 81
 Index: 109
 Original Time: 00:05:58:00 --> 00:06:00:00
 New Time: 00:05:58.000 --> 00:06:00.000
 Before: That's all I saw on the Black.
-After: That's all I saw on the black.
+After: Okay, that should work.
 
-Change 70
+Change 82
+Index: 110
+Original Time: 00:06:02:00 --> 00:06:03:00
+New Time: 00:06:02.000 --> 00:06:03.000
+Before: Okay, that should work.
+After: There we go.
+
+Change 83
+Index: 111
+Original Time: 00:06:03:00 --> 00:06:04:00
+New Time: 00:06:03.000 --> 00:06:04.000
+Before: There we go.
+After: Sauron was created.
+
+Change 84
+Index: 112
+Original Time: 00:06:04:00 --> 00:06:05:00
+New Time: 00:06:04.000 --> 00:06:05.000
+Before: Sauron was created.
+After: Notice that an ID was also generated.
+
+Change 85
 Index: 113
 Original Time: 00:06:05:00 --> 00:06:09:00
 New Time: 00:06:05.000 --> 00:06:09.000
 Before: So notice they also have an ID was generated.
-After: So notice there also an ID was generated.
+After: So it entered the JSON file.
 
-Change 71
+Change 86
 Index: 114
 Original Time: 00:06:09:00 --> 00:06:11:00
 New Time: 00:06:09.000 --> 00:06:11.000
 Before: So it entered the Jason file.
-After: So it entered the JSON file.
+After: I'm going to do the same thing, just to show you how the
 
-Change 72
+Change 87
 Index: 115
 Original Time: 00:06:12:00 --> 00:06:15:00
 New Time: 00:06:12.000 --> 00:06:15.000
 Before: I'm gonna do the same thing, just show you how the
-After: I'm going to do the same thing, just to show you how the
+After: same constraints are coming into action here.
 
-Change 73
+Change 88
+Index: 116
+Original Time: 00:06:15:00 --> 00:06:18:00
+New Time: 00:06:15.000 --> 00:06:18.000
+Before: same constraints are coming into action here.
+After: So we're getting an error here that says input
+
+Change 89
+Index: 117
+Original Time: 00:06:18:00 --> 00:06:20:00
+New Time: 00:06:18.000 --> 00:06:20.000
+Before: So we're getting an error here that says input
+After: should be less than or equal to 100.
+
+Change 90
+Index: 118
+Original Time: 00:06:20:00 --> 00:06:21:00
+New Time: 00:06:20.000 --> 00:06:21.000
+Before: should be less than or equal to 100.
+After: Going into the API.
+
+Change 91
+Index: 119
+Original Time: 00:06:22:00 --> 00:06:25:00
+New Time: 00:06:22.000 --> 00:06:25.000
+Before: Going into the API.
+After: There's the FastAPI doc.
+
+Change 92
 Index: 120
 Original Time: 00:06:25:00 --> 00:06:26:00
 New Time: 00:06:25.000 --> 00:06:26.000
 Before: There's the fast API doc.
-After: There's the FastAPI doc.
+After: This is the application file, the CLI.
 
-Change 74
+Change 93
 Index: 121
 Original Time: 00:06:26:00 --> 00:06:31:00
 New Time: 00:06:26.000 --> 00:06:31.000
 Before: This is the application File, the CLI.
-After: This is the application file, the CLI.
+After: I'll just show you the different code files and then we're going to step through them.
 
-Change 75
+Change 94
 Index: 122
 Original Time: 00:06:31:00 --> 00:06:35:00
 New Time: 00:06:31.000 --> 00:06:35.000
 Before: Just show you the different code files and then we're going to step through them.
-After: Just showing you the different code files and then we're going to step through them.
+After: DTO, repository.
 
-Change 76
+Change 95
 Index: 123
 Original Time: 00:06:35:00 --> 00:06:37:00
 New Time: 00:06:35.000 --> 00:06:37.000
 Before: DTO Repository.
-After: DTO, repository.
+After: So we have your api.py, application.py,
 
-Change 77
+Change 96
 Index: 124
 Original Time: 00:06:38:00 --> 00:06:42:00
 New Time: 00:06:38.000 --> 00:06:42.000
 Before: So we have your API.plication.pi,
-After: So we have your api.py, application.py,
+After: domain.py, dto.py, and repository.py.
 
-Change 78
+Change 97
 Index: 125
 Original Time: 00:06:42:00 --> 00:06:45:00
 New Time: 00:06:42.000 --> 00:06:45.000
 Before: dot pi, dot pi, dot pi,
-After: domain.py, dto.py, repository.py,
+After: Let's look at—just going to activate,
 
-Change 79
+Change 98
 Index: 126
 Original Time: 00:06:45:00 --> 00:06:47:00
 New Time: 00:06:45.000 --> 00:06:47.000
 Before: and repository.pi.
-After: and repository.py.
+After: make sure we're in the right virtual environment here. Doesn't seem to be the case.
 
-Change 80
+Change 99
 Index: 127
 Original Time: 00:06:48:00 --> 00:06:51:00
 New Time: 00:06:48.000 --> 00:06:51.000
 Before: Let's look at just going to activate,
-After: Let's look at—just going to activate,
+After: So we're going to step through domain models
 
-Change 81
+Change 100
 Index: 128
 Original Time: 00:06:51:00 --> 00:06:55:00
 New Time: 00:06:51.000 --> 00:06:55.000
 Before: make sure we're in the right virtual environment of here doesn't seem to be the case.
-After: make sure we're in the right virtual environment here. Doesn't seem to be the case.
+After: and annotated types.
 
-Change 82
+Change 101
+Index: 129
+Original Time: 00:06:56:00 --> 00:06:59:00
+New Time: 00:06:56.000 --> 00:06:59.000
+Before: So we're going to step through domain models
+After: That's really what I want to focus on in this video.
+
+Change 102
+Index: 130
+Original Time: 00:06:59:00 --> 00:07:00:00
+New Time: 00:06:59.000 --> 00:07:00.000
+Before: and annotated types.
+After: A lot of the other stuff we'll expand
+
+Change 103
+Index: 131
+Original Time: 00:07:00:00 --> 00:07:03:00
+New Time: 00:07:00.000 --> 00:07:03.000
+Before: That's really what I want to focus on in this video.
+After: in future episodes.
+
+Change 104
 Index: 132
 Original Time: 00:07:03:00 --> 00:07:06:00
 New Time: 00:07:03.000 --> 00:07:06.000
 Before: A lot of the other stuff will expand
-After: A lot of the other stuff we'll expand
+After: Data transfer object.
 
-Change 83
+Change 105
 Index: 133
 Original Time: 00:07:06:00 --> 00:07:07:00
 New Time: 00:07:06.000 --> 00:07:07.000
 Before: in future episode.
-After: in future episodes.
+After: I'll touch on that, repository, application use cases,
 
-Change 84
+Change 106
+Index: 134
+Original Time: 00:07:07:00 --> 00:07:09:00
+New Time: 00:07:07.000 --> 00:07:09.000
+Before: Data transfer object.
+After: API, CLI, command line interface.
+
+Change 107
+Index: 135
+Original Time: 00:07:09:00 --> 00:07:12:00
+New Time: 00:07:09.000 --> 00:07:12.000
+Before: I'll touch on that, repository, application use cases,
+After: Let's look at the domain models over here.
+
+Change 108
 Index: 136
 Original Time: 00:07:12:00 --> 00:07:16:00
 New Time: 00:07:12.000 --> 00:07:16.000
 Before: API, CLI, come online interface.
-After: API, CLI, command line interface.
+After: There are two things I wanted to note with importing
 
-Change 85
+Change 109
+Index: 137
+Original Time: 00:07:16:00 --> 00:07:18:00
+New Time: 00:07:16.000 --> 00:07:18.000
+Before: So let's look at the domain models over here.
+After: Pydantic and typing.Annotated.
+
+Change 110
 Index: 138
 Original Time: 00:07:19:00 --> 00:07:22:00
 New Time: 00:07:19.000 --> 00:07:22.000
 Before: So this is 2 things that I wanted to note with importing
-After: There are two things I wanted to note with importing
+After: We're defining an annotated type.
 
-Change 86
+Change 111
 Index: 139
 Original Time: 00:07:22:00 --> 00:07:24:00
 New Time: 00:07:22.000 --> 00:07:24.000
 Before: pedantic and typing annotated.
-After: Pydantic and typing.Annotated.
+After: If this doesn't make a lot of sense,
 
-Change 87
+Change 112
+Index: 140
+Original Time: 00:07:24:00 --> 00:07:26:00
+New Time: 00:07:24.000 --> 00:07:26.000
+Before: We're defining an annotated type.
+After: look at Mastering Python Type Hints,
+
+Change 113
 Index: 141
 Original Time: 00:07:26:00 --> 00:07:28:00
 New Time: 00:07:26.000 --> 00:07:28.000
 Before: And if this is, doesn't make a lot of scenes.
-After: If this doesn't make a lot of sense,
+After: where I go into great detail on how to use annotated types.
 
-Change 88
+Change 114
 Index: 142
 Original Time: 00:07:28:00 --> 00:07:31:00
 New Time: 00:07:28.000 --> 00:07:31.000
 Before: Look at mastering Python type hints,
-After: look at Mastering Python Type Hints,
+After: Notice there, the pattern that's defined,
 
-Change 89
+Change 115
+Index: 143
+Original Time: 00:07:31:00 --> 00:07:34:00
+New Time: 00:07:31.000 --> 00:07:34.000
+Before: where I go into great detail on how to use annotated types.
+After: that's a regular expression that Pydantic
+
+Change 116
+Index: 144
+Original Time: 00:07:34:00 --> 00:07:37:00
+New Time: 00:07:34.000 --> 00:07:37.000
+Before: Notice there, the pattern that's defined,
+After: will enforce.
+
+Change 117
 Index: 145
 Original Time: 00:07:38:00 --> 00:07:41:00
 New Time: 00:07:38.000 --> 00:07:41.000
 Before: that's a regular expression that pedantic
-After: that's a regular expression that Pydantic
+After: So Pydantic absorbs and examines the
 
-Change 90
+Change 118
+Index: 146
+Original Time: 00:07:41:00 --> 00:07:42:00
+New Time: 00:07:41.000 --> 00:07:42.000
+Before: will enforce.
+After: annotated type and then builds the constraint.
+
+Change 119
 Index: 147
 Original Time: 00:07:42:00 --> 00:07:45:00
 New Time: 00:07:42.000 --> 00:07:45.000
 Before: So pidantic absorbs and it examines the
-After: So Pydantic absorbs and examines the
+After: The same thing here with
 
-Change 91
+Change 120
+Index: 148
+Original Time: 00:07:45:00 --> 00:07:47:00
+New Time: 00:07:45.000 --> 00:07:47.000
+Before: annotated type and then builds the constraint.
+After: the next one, character name: we have the min length and max length over there.
+
+Change 121
 Index: 149
 Original Time: 00:07:47:00 --> 00:07:51:00
 New Time: 00:07:47.000 --> 00:07:51.000
 Before: The same thing here with, uh, with
-After: The same thing here with
+After: That's why Gandalf failed originally,
 
-Change 92
+Change 122
 Index: 150
 Original Time: 00:07:51:00 --> 00:07:55:00
 New Time: 00:07:51.000 --> 00:07:55.000
 Before: the next one character name, we have the min length and max length over there.
-After: the next one, character name: we have the min length and max length over there.
+After: and over here we have the health, as well as the different attributes,
 
-Change 93
+Change 123
 Index: 151
 Original Time: 00:07:55:00 --> 00:07:58:00
 New Time: 00:07:55.000 --> 00:07:58.000
 Before: That's why Gandalf failed originally,
-After: That's why Gandalf failed originally.
+After: 0 to 100 constraint.
 
-Change 94
+Change 124
 Index: 152
 Original Time: 00:07:58:00 --> 00:08:02:00
 New Time: 00:07:58.000 --> 00:08:02.000
 Before: and over here we have the health, as well as the different attributes,
-After: And over here we have the health, as well as the different attributes,
+After: That's our two classes.
 
-Change 95
+Change 125
+Index: 153
+Original Time: 00:08:02:00 --> 00:08:03:00
+New Time: 00:08:02.000 --> 00:08:03.000
+Before: 0 to 100 constraint.
+After: These are the domain classes.
+
+Change 126
 Index: 154
 Original Time: 00:08:03:00 --> 00:08:05:00
 New Time: 00:08:03.000 --> 00:08:05.000
 Before: That's our 2 classes.
-After: That's our two classes.
+After: Notice how simple they are.
 
-Change 96
+Change 127
+Index: 155
+Original Time: 00:08:05:00 --> 00:08:07:00
+New Time: 00:08:05.000 --> 00:08:07.000
+Before: These are the domain classes.
+After: They are built using the annotated types.
+
+Change 128
+Index: 156
+Original Time: 00:08:07:00 --> 00:08:08:00
+New Time: 00:08:07.000 --> 00:08:08.000
+Before: Notice how simple they are.
+After: Now in the future, we're going to add some more invariants
+
+Change 129
+Index: 157
+Original Time: 00:08:08:00 --> 00:08:12:00
+New Time: 00:08:08.000 --> 00:08:12.000
+Before: They are built using the annotated types.
+After: into these classes, but for now, we're just keeping them super simple like this.
+
+Change 130
 Index: 158
 Original Time: 00:08:13:00 --> 00:08:17:00
 New Time: 00:08:13.000 --> 00:08:17.000
 Before: Now in future, we're going to add some more invariants
-After: Now in the future, we're going to add some more invariants
+After: Data transfer objects: we are importing
 
-Change 97
+Change 131
 Index: 159
 Original Time: 00:08:17:00 --> 00:08:21:00
 New Time: 00:08:17.000 --> 00:08:21.000
 Before: into these classes, but for now, we just keeping them super simple like this.
-After: into these classes, but for now, we're just keeping them super simple like this.
+After: the same annotated types.
 
-Change 98
+Change 132
 Index: 160
 Original Time: 00:08:21:00 --> 00:08:24:00
 New Time: 00:08:21.000 --> 00:08:24.000
 Before: Data transfer objects, we are importing
-After: Data transfer objects: we are importing
+After: Line four over there, from domain import, we're
 
-Change 99
+Change 133
+Index: 161
+Original Time: 00:08:24:00 --> 00:08:26:00
+New Time: 00:08:24.000 --> 00:08:26.000
+Before: the same annotated types.
+After: importing all of the annotated types.
+
+Change 134
 Index: 162
 Original Time: 00:08:26:00 --> 00:08:29:00
 New Time: 00:08:26.000 --> 00:08:29.000
 Before: Line four, over there, from the main import, we're
-After: Line four over there, from domain import, we're
+After: Then we're building the DTO. The first DTO here is a class,
 
-Change 100
+Change 135
+Index: 163
+Original Time: 00:08:29:00 --> 00:08:31:00
+New Time: 00:08:29.000 --> 00:08:31.000
+Before: importing all of the annotated types.
+After: which we are doing just so that
+
+Change 136
 Index: 164
 Original Time: 00:08:31:00 --> 00:08:34:00
 New Time: 00:08:31.000 --> 00:08:34.000
 Before: And then we're building the DTO, the 1st detail here as a class.
-After: And then we're building the DTO. The first DTO here is a class.
+After: we don't have to redefine model config.
 
-Change 101
+Change 137
+Index: 165
+Original Time: 00:08:34:00 --> 00:08:37:00
+New Time: 00:08:34.000 --> 00:08:37.000
+Before: Which we are doing just so that
+After: We're defining that once, and we're inheriting from this class
+
+Change 138
 Index: 166
 Original Time: 00:08:37:00 --> 00:08:39:00
 New Time: 00:08:37.000 --> 00:08:39.000
 Before: we don't have to really find model conflict.
-After: we don't have to redefine model config.
+After: so that's everywhere.
 
-Change 102
+Change 139
+Index: 167
+Original Time: 00:08:39:00 --> 00:08:42:00
+New Time: 00:08:39.000 --> 00:08:42.000
+Before: We're defining that once, and we're inheriting from this class
+After: We're defining your character attributes DTO, which we'll reuse.
+
+Change 140
+Index: 168
+Original Time: 00:08:42:00 --> 00:08:43:00
+New Time: 00:08:42.000 --> 00:08:43.000
+Before: so that that's everywhere.
+After: Then we have character base,
+
+Change 141
 Index: 169
 Original Time: 00:08:44:00 --> 00:08:48:00
 New Time: 00:08:44.000 --> 00:08:48.000
 Before: We're defining your character attributes, TTO, which will reuse.
-After: We're defining your character attributes DTO, which we'll reuse.
+After: where we
 
-Change 103
+Change 142
+Index: 170
+Original Time: 00:08:48:00 --> 00:08:51:00
+New Time: 00:08:48.000 --> 00:08:51.000
+Before: So then we have character base,
+After: are using character attributes DTO as well as name and health.
+
+Change 143
 Index: 171
 Original Time: 00:08:51:00 --> 00:08:54:00
 New Time: 00:08:51.000 --> 00:08:54.000
 Before: which uh, where we
-After: which is where we
+After: That gives us a base for our character, and we're defining
 
-Change 104
+Change 144
 Index: 172
 Original Time: 00:08:55:00 --> 00:08:59:00
 New Time: 00:08:55.000 --> 00:08:59.000
 Before: are, that's where we're using character attributes TTO as well as name and elf.
-After: are— that's where we're using character attributes DTO as well as name and health.
+After: create character request DTO.
 
-Change 105
+Change 145
+Index: 173
+Original Time: 00:08:59:00 --> 00:09:02:00
+New Time: 00:08:59.000 --> 00:09:02.000
+Before: So that gives us a base for our character, and we're defining
+After: This is a request that will attach now to FastAPI.
+
+Change 146
 Index: 174
 Original Time: 00:09:02:00 --> 00:09:04:00
 New Time: 00:09:02.000 --> 00:09:04.000
 Before: create character request DTL.
-After: create character request DTO.
+After: We're just using character base DTO for that.
 
-Change 106
+Change 147
 Index: 175
 Original Time: 00:09:04:00 --> 00:09:07:00
 New Time: 00:09:04.000 --> 00:09:07.000
 Before: This is a request that will attach now to fast IPI.
-After: This is a request that we'll attach now to FastAPI.
+After: We're also defining our response,
 
-Change 107
+Change 148
 Index: 176
 Original Time: 00:09:07:00 --> 00:09:10:00
 New Time: 00:09:07.000 --> 00:09:10.000
 Before: And we're just using character-based TTO for that.
-After: And we're just using character base DTO for that.
+After: and the only thing that the response has, in addition
 
-Change 108
+Change 149
 Index: 177
 Original Time: 00:09:10:00 --> 00:09:13:00
 New Time: 00:09:10.000 --> 00:09:13.000
 Before: We're also defining out response,
-After: We're also defining our response,
+After: to the request, is the ID.
 
-Change 109
+Change 150
+Index: 178
+Original Time: 00:09:13:00 --> 00:09:16:00
+New Time: 00:09:13.000 --> 00:09:16.000
+Before: and the only thing that the response has, in addition
+After: We have update character attributes,
+
+Change 151
+Index: 179
+Original Time: 00:09:16:00 --> 00:09:18:00
+New Time: 00:09:16.000 --> 00:09:18.000
+Before: to the request, is the ID.
+After: request DTOs, so this would be for the update.
+
+Change 152
 Index: 180
 Original Time: 00:09:19:00 --> 00:09:23:00
 New Time: 00:09:19.000 --> 00:09:23.000
 Before: We have update the character attributes,
-After: We have update character attributes,
+After: Notice the None equals None over there.
 
-Change 110
+Change 153
 Index: 181
 Original Time: 00:09:23:00 --> 00:09:25:00
 New Time: 00:09:23.000 --> 00:09:25.000
 Before: request ETIs, so this would be for the update.
-After: request DTOs, so this would be for the update.
+After: It indicates that these are all optional fields.
 
-Change 111
+Change 154
 Index: 182
 Original Time: 00:09:25:00 --> 00:09:27:00
 New Time: 00:09:25.000 --> 00:09:27.000
 Before: Notice the none equals none over there.
-After: Notice the None equals None over there.
+After: That's why we were able to only update three of them.
 
-Change 112
+Change 155
 Index: 183
 Original Time: 00:09:27:00 --> 00:09:30:00
 New Time: 00:09:27.000 --> 00:09:30.000
 Before: It indicates that this is these are all optional fields.
-After: It indicates that these are all optional fields.
+After: Then update character response DTO.
 
-Change 113
+Change 156
 Index: 184
 Original Time: 00:09:30:00 --> 00:09:33:00
 New Time: 00:09:30.000 --> 00:09:33.000
 Before: So that's why we were able to only update 3 of them.
-After: So that's why we were able to only update three of them.
+After: That's where we are returning the create character response DTO.
 
-Change 114
+Change 157
 Index: 185
 Original Time: 00:09:33:00 --> 00:09:37:00
 New Time: 00:09:33.000 --> 00:09:37.000
 Before: Uh, and then update character response DTO.
-After: And then update character response DTO.
+After: All right, repository
 
-Change 115
+Change 158
 Index: 186
 Original Time: 00:09:37:00 --> 00:09:41:00
 New Time: 00:09:37.000 --> 00:09:41.000
 Before: That's where we are returning the create character response, TTO.
-After: That's where we are returning the create character response DTO.
+After: is, in a clean architecture, where you're dealing with the data.
 
-Change 116
+Change 159
+Index: 187
+Original Time: 00:09:42:00 --> 00:09:45:00
+New Time: 00:09:42.000 --> 00:09:45.000
+Before: All right, repository
+After: Here we have a JSON repository, and
+
+Change 160
 Index: 188
 Original Time: 00:09:45:00 --> 00:09:48:00
 New Time: 00:09:45.000 --> 00:09:48.000
 Before: is the, in a clean architecture, repository
-After: is the—in a clean architecture, repository
+After: I'm not going to go into great detail here, so that's
 
-Change 117
+Change 161
+Index: 189
+Original Time: 00:09:48:00 --> 00:09:49:00
+New Time: 00:09:48.000 --> 00:09:49.000
+Before: is where you're dealing with the data.
+After: where we have your character repository JSON file.
+
+Change 162
 Index: 190
 Original Time: 00:09:49:00 --> 00:09:52:00
 New Time: 00:09:49.000 --> 00:09:52.000
 Before: So here we have adjacent repository, and
-After: So here we have a JSON repository, and
+After: Typically, this is what a repository looks like.
 
-Change 118
+Change 163
 Index: 191
 Original Time: 00:09:53:00 --> 00:09:56:00
 New Time: 00:09:53.000 --> 00:09:56.000
 Before: not going to go into great detail here, so that's
-After: I'm not going to go into great detail here, so that's
+After: You could do it as functions.
 
-Change 119
+Change 164
 Index: 192
 Original Time: 00:09:56:00 --> 00:10:00:00
 New Time: 00:09:56.000 --> 00:10:00.000
 Before: uh, we have your character repository Jason file.
-After: we have your character repository JSON file.
+After: In this case, we implemented a class and we have things
 
-Change 120
+Change 165
 Index: 193
 Original Time: 00:10:00:00 --> 00:10:03:00
 New Time: 00:10:00.000 --> 00:10:03.000
 Before: So typically, this would be what a repository looks like.
-After: So typically, this is what a repository looks like.
+After: like list all, get by ID, add, update.
 
-Change 121
+Change 166
+Index: 194
+Original Time: 00:10:03:00 --> 00:10:05:00
+New Time: 00:10:03.000 --> 00:10:05.000
+Before: You could do it as functions.
+After: Then we have some helper classes down here: read, draw,
+
+Change 167
+Index: 195
+Original Time: 00:10:05:00 --> 00:10:08:00
+New Time: 00:10:05.000 --> 00:10:08.000
+Before: In this case, we implemented a class and we have things
+After: read, validate, write, write, draw.
+
+Change 168
+Index: 196
+Original Time: 00:10:08:00 --> 00:10:12:00
+New Time: 00:10:08.000 --> 00:10:12.000
+Before: like list all, get by ID, add, update.
+After: Application use cases.
+
+Change 169
 Index: 197
 Original Time: 00:10:12:00 --> 00:10:15:00
 New Time: 00:10:12.000 --> 00:10:15.000
 Before: And then we have some alput classes down here, read, draw,
-After: And then we have some output classes down here: read, draw,
+After: The application use cases interact with the domain.
 
-Change 122
+Change 170
 Index: 198
 Original Time: 00:10:15:00 --> 00:10:17:00
 New Time: 00:10:15.000 --> 00:10:17.000
 Before: read, validate it, write, write, draw.
-After: read, validate, write, write, draw.
+After: They also receive the DTOs.
 
-Change 123
+Change 171
+Index: 199
+Original Time: 00:10:18:00 --> 00:10:20:00
+New Time: 00:10:18.000 --> 00:10:20.000
+Before: Application use cases.
+After: So DTO objects come in, the delivery
+
+Change 172
+Index: 200
+Original Time: 00:10:20:00 --> 00:10:23:00
+New Time: 00:10:20.000 --> 00:10:23.000
+Before: So the application use cases interact with the domain.
+After: layer transfers them into the application layer, and the
+
+Change 173
+Index: 201
+Original Time: 00:10:23:00 --> 00:10:25:00
+New Time: 00:10:23.000 --> 00:10:25.000
+Before: They also receive the DTOs.
+After: application layer unpacks them, and then establishes
+
+Change 174
 Index: 202
 Original Time: 00:10:25:00 --> 00:10:28:00
 New Time: 00:10:25.000 --> 00:10:28.000
 Before: So DDO objects come in, the delivery
-After: So DTO objects come in, the delivery
+After: or instantiates the object, and works
 
-Change 124
+Change 175
+Index: 203
+Original Time: 00:10:28:00 --> 00:10:31:00
+New Time: 00:10:28.000 --> 00:10:31.000
+Before: layer transfers them into the application layer, and the
+After: with a repository or other infrastructure as required.
+
+Change 176
 Index: 204
 Original Time: 00:10:32:00 --> 00:10:35:00
 New Time: 00:10:32.000 --> 00:10:35.000
 Before: application layer, unpacks them, and then establishes
-After: application layer unpacks them, and then establishes
+After: I'll give an example of that.
 
-Change 125
+Change 177
+Index: 205
+Original Time: 00:10:35:00 --> 00:10:38:00
+New Time: 00:10:35.000 --> 00:10:38.000
+Before: or instantiates the object, and works
+After: So we have your create character.
+
+Change 178
+Index: 206
+Original Time: 00:10:38:00 --> 00:10:42:00
+New Time: 00:10:38.000 --> 00:10:42.000
+Before: with a repository or other infrastructure as required.
+After: You'll see that it receives create
+
+Change 179
 Index: 207
 Original Time: 00:10:42:00 --> 00:10:43:00
 New Time: 00:10:42.000 --> 00:10:43.000
 Before: Give an example of that.
-After: I'll give an example of that.
+After: character request DTO, and it returns,
 
-Change 126
+Change 180
 Index: 208
 Original Time: 00:10:43:00 --> 00:10:46:00
 New Time: 00:10:43.000 --> 00:10:46.000
 Before: So we have your create character.
-After: So we have here create character.
+After: create character response DTO.
 
-Change 127
+Change 181
+Index: 209
+Original Time: 00:10:46:00 --> 00:10:49:00
+New Time: 00:10:46.000 --> 00:10:49.000
+Before: You'll see that it receives create
+After: What it does there on line 39,
+
+Change 182
 Index: 210
 Original Time: 00:10:49:00 --> 00:10:52:00
 New Time: 00:10:49.000 --> 00:10:52.000
 Before: character request TTO, and it returns,
-After: character request DTO, and it returns
+After: is notice the request.attributes,
 
-Change 128
+Change 183
 Index: 211
 Original Time: 00:10:53:00 --> 00:10:55:00
 New Time: 00:10:53.000 --> 00:10:55.000
 Before: create character response, TTO.
-After: create character response DTO.
+After: dot model_dump.
 
-Change 129
+Change 184
 Index: 212
 Original Time: 00:10:55:00 --> 00:10:58:00
 New Time: 00:10:55.000 --> 00:10:58.000
 Before: What it does there online 39.
-After: What it does there on line 39,
+After: What it does there is unpack the DTO,
 
-Change 130
+Change 185
 Index: 213
 Original Time: 00:10:58:00 --> 00:11:02:00
 New Time: 00:10:58.000 --> 00:11:02.000
 Before: Is notice the request.attribute,
-After: is notice the request.attributes,
+After: gets all the data from the DTO, and then,
 
-Change 131
+Change 186
 Index: 214
 Original Time: 00:11:02:00 --> 00:11:04:00
 New Time: 00:11:02.000 --> 00:11:04.000
 Before: dot model dump.
-After: dot model_dump.
+After: it creates
 
-Change 132
+Change 187
 Index: 215
 Original Time: 00:11:04:00 --> 00:11:06:00
 New Time: 00:11:04.000 --> 00:11:06.000
 Before: What it does over there, it unpacked the DTO,
-After: What it does there is it unpacks the DTO,
+After: a character attribute model.
 
-Change 133
+Change 188
 Index: 216
 Original Time: 00:11:07:00 --> 00:11:10:00
 New Time: 00:11:07.000 --> 00:11:10.000
 Before: gets all the data of the DTO, and it then,
-After: gets all the data of the DTO, and then,
+After: That's the first thing we're doing: creating the
 
-Change 134
+Change 189
 Index: 217
 Original Time: 00:11:10:00 --> 00:11:13:00
 New Time: 00:11:10.000 --> 00:11:13.000
 Before: uh, It creates
-After: it creates
+After: character attributes over there, and that also forms
 
-Change 135
+Change 190
+Index: 218
+Original Time: 00:11:13:00 --> 00:11:15:00
+New Time: 00:11:13.000 --> 00:11:15.000
+Before: a character attribute model.
+After: part of the creation of the character model on line 35.
+
+Change 191
 Index: 219
 Original Time: 00:11:15:00 --> 00:11:18:00
 New Time: 00:11:15.000 --> 00:11:18.000
 Before: So that's the 1st thing we're doing, creating the
-After: So that's the first thing we're doing, creating the
+After: So character equals Character(
 
-Change 136
+Change 192
+Index: 220
+Original Time: 00:11:18:00 --> 00:11:21:00
+New Time: 00:11:18.000 --> 00:11:21.000
+Before: character attributes over there, and that also forms
+After: We're putting an ID, which is new_id(), a function
+
+Change 193
 Index: 221
 Original Time: 00:11:21:00 --> 00:11:24:00
 New Time: 00:11:21.000 --> 00:11:24.000
 Before: part of the creation of the character model line 35.
-After: part of the creation of the character model on line 35.
+After: that generates a new ID for us.
 
-Change 137
+Change 194
+Index: 222
+Original Time: 00:11:25:00 --> 00:11:27:00
+New Time: 00:11:25.000 --> 00:11:27.000
+Before: So character equals character.
+After: Name and health, and then also the
+
+Change 195
 Index: 223
 Original Time: 00:11:27:00 --> 00:11:30:00
 New Time: 00:11:27.000 --> 00:11:30.000
 Before: We're putting an ID, which is new ID, which is a function
-After: We're putting an ID, which is new_id, which is a function
+After: attributes, and that's creating the character.
 
-Change 138
+Change 196
 Index: 224
 Original Time: 00:11:30:00 --> 00:11:32:00
 New Time: 00:11:30.000 --> 00:11:32.000
 Before: which is generating a new ID for us.
-After: that generates a new ID for us.
+After: Then we're sending that to the repository.
 
-Change 139
+Change 197
+Index: 225
+Original Time: 00:11:32:00 --> 00:11:35:00
+New Time: 00:11:32.000 --> 00:11:35.000
+Before: Name and health, and then also the
+After: You always want to send—and we'll look into detail on this—
+
+Change 198
+Index: 226
+Original Time: 00:11:35:00 --> 00:11:37:00
+New Time: 00:11:35.000 --> 00:11:37.000
+Before: attributes, and that's creating the character.
+After: but you want to send the actual object to the repository,
+
+Change 199
 Index: 227
 Original Time: 00:11:38:00 --> 00:11:42:00
 New Time: 00:11:38.000 --> 00:11:42.000
 Before: Uh, and then we're sending that to the repository.
-After: And then we're sending that to the repository.
+After: not the DTO object.
 
-Change 140
+Change 200
 Index: 228
 Original Time: 00:11:42:00 --> 00:11:45:00
 New Time: 00:11:42.000 --> 00:11:45.000
 Before: You always want to send and we'll look into detail on this,
-After: You always want to send—and we'll look into detail on this—
+After: Okay, update character attribute.
 
-Change 141
+Change 201
+Index: 229
+Original Time: 00:11:45:00 --> 00:11:49:00
+New Time: 00:11:45.000 --> 00:11:49.000
+Before: but you want to send the actual object to the repository,
+After: This is the update function.
+
+Change 202
+Index: 230
+Original Time: 00:11:49:00 --> 00:11:51:00
+New Time: 00:11:49.000 --> 00:11:51.000
+Before: not the DTO object.
+After: And then get character.
+
+Change 203
+Index: 231
+Original Time: 00:11:51:00 --> 00:11:54:00
+New Time: 00:11:51.000 --> 00:11:54.000
+Before: Okay, update character attribute.
+After: API.
+
+Change 204
+Index: 232
+Original Time: 00:11:54:00 --> 00:11:56:00
+New Time: 00:11:54.000 --> 00:11:56.000
+Before: This is the update function.
+After: Notice how simple the API is.
+
+Change 205
+Index: 233
+Original Time: 00:11:56:00 --> 00:11:57:00
+New Time: 00:11:56.000 --> 00:11:57.000
+Before: And then get character.
+After: We don't have any logic in here, and this
+
+Change 206
+Index: 234
+Original Time: 00:11:59:00 --> 00:12:00:00
+New Time: 00:11:59.000 --> 00:12:00.000
+Before: API.
+After: is the command line interface as well.
+
+Change 207
 Index: 235
 Original Time: 00:12:00:00 --> 00:12:04:00
 New Time: 00:12:00.000 --> 00:12:04.000
 Before: So, Notice how simple the API is.
-After: So, notice how simple the API is.
+After: What I want you to notice
 
-Change 142
+Change 208
 Index: 236
 Original Time: 00:12:04:00 --> 00:12:07:00
 New Time: 00:12:04.000 --> 00:12:07.000
 Before: It's really, we don't have any logic in here, and this
-After: It's really—we don't have any logic in here, and this
+After: here is the command line.
 
-Change 143
+Change 209
+Index: 237
+Original Time: 00:12:07:00 --> 00:12:09:00
+New Time: 00:12:07.000 --> 00:12:09.000
+Before: is the command line interface as well.
+After: Let's go to
+
+Change 210
 Index: 238
 Original Time: 00:12:09:00 --> 00:12:11:00
 New Time: 00:12:09.000 --> 00:12:11.000
 Before: Uh, what I want you to notice
-After: What I want you to notice
+After: for example, create.
 
-Change 144
+Change 211
+Index: 239
+Original Time: 00:12:11:00 --> 00:12:13:00
+New Time: 00:12:11.000 --> 00:12:13.000
+Before: here is the command line.
+After: What it does is exactly the same as the API.
+
+Change 212
 Index: 240
 Original Time: 00:12:13:00 --> 00:12:15:00
 New Time: 00:12:13.000 --> 00:12:15.000
 Before: Let's go to.
-After: Let's go to
+After: This is why I wanted to have two—
 
-Change 145
+Change 213
 Index: 241
 Original Time: 00:12:15:00 --> 00:12:17:00
 New Time: 00:12:15.000 --> 00:12:17.000
 Before: For example, you create.
-After: for example, create.
+After: I wanted to have the API as well as the command line
 
-Change 146
+Change 214
+Index: 242
+Original Time: 00:12:18:00 --> 00:12:21:00
+New Time: 00:12:18.000 --> 00:12:21.000
+Before: What it does, it does exactly the same thing as the API.
+After: interface. You can notice the pattern.
+
+Change 215
 Index: 243
 Original Time: 00:12:21:00 --> 00:12:24:00
 New Time: 00:12:21.000 --> 00:12:24.000
 Before: And this is why I wanted to have 2 uh,
-After: And this is why I wanted to have two—
+After: All we're doing is packing it in the data transfer
 
-Change 147
+Change 216
 Index: 244
 Original Time: 00:12:25:00 --> 00:12:28:00
 New Time: 00:12:25.000 --> 00:12:28.000
 Before: I wanted to have the API as well as the, come online
-After: I wanted to have the API as well as the command line
+After: object and sending it to the application layer.
 
-Change 148
+Change 217
 Index: 245
 Original Time: 00:12:28:00 --> 00:12:30:00
 New Time: 00:12:28.000 --> 00:12:30.000
 Before: interface, you can notice the pattern.
-After: interface. You can notice the pattern.
+After: From that point onwards, everything stays the same.
 
-Change 149
+Change 218
+Index: 246
+Original Time: 00:12:30:00 --> 00:12:33:00
+New Time: 00:12:30.000 --> 00:12:33.000
+Before: All we're doing is we're packing it in the data transfer
+After: We don't have anything in the application layer that knows about
+
+Change 219
+Index: 247
+Original Time: 00:12:33:00 --> 00:12:35:00
+New Time: 00:12:33.000 --> 00:12:35.000
+Before: object and sending it to the application layer.
+After: FastAPI or the command line interface.
+
+Change 220
+Index: 248
+Original Time: 00:12:35:00 --> 00:12:38:00
+New Time: 00:12:35.000 --> 00:12:38.000
+Before: From that point onwards, everything stays the same.
+After: All we know is there's a data transfer object coming in,
+
+Change 221
+Index: 249
+Original Time: 00:12:39:00 --> 00:12:42:00
+New Time: 00:12:39.000 --> 00:12:42.000
+Before: We don't have anything in the application layer that knows about
+After: and we're unpacking that and doing a create.
+
+Change 222
 Index: 250
 Original Time: 00:12:42:00 --> 00:12:45:00
 New Time: 00:12:42.000 --> 00:12:45.000
 Before: fast API or command line interface.
-After: FastAPI or the command line interface.
+After: Whether that comes in
 
-Change 150
+Change 223
+Index: 251
+Original Time: 00:12:45:00 --> 00:12:48:00
+New Time: 00:12:45.000 --> 00:12:48.000
+Before: All we know is there's a data transfer object coming in
+After: for example, imagine that you have some gRPC
+
+Change 224
 Index: 252
 Original Time: 00:12:48:00 --> 00:12:50:00
 New Time: 00:12:48.000 --> 00:12:50.000
 Before: and we're unpacking that and we're doing a create.
-After: and we're unpacking that and doing a create.
+After: or you have some other type of call.
 
-Change 151
+Change 225
 Index: 253
 Original Time: 00:12:50:00 --> 00:12:52:00
 New Time: 00:12:50.000 --> 00:12:52.000
 Before: Whether that comes in.
-After: Whether that comes in
+After: Or maybe you have
 
-Change 152
+Change 226
 Index: 254
 Original Time: 00:12:52:00 --> 00:12:56:00
 New Time: 00:12:52.000 --> 00:12:56.000
 Before: For example, imagine that you have some GRPC
-After: for example, imagine that you have some gRPC
+After: command line, FastAPI.
 
-Change 153
+Change 227
+Index: 255
+Original Time: 00:12:56:00 --> 00:12:58:00
+New Time: 00:12:56.000 --> 00:12:58.000
+Before: or you have some other type of call.
+After: Maybe you want to add a different type of API or an event—a
+
+Change 228
+Index: 256
+Original Time: 00:12:58:00 --> 00:13:00:00
+New Time: 00:12:58.000 --> 00:13:00.000
+Before: Or maybe you have
+After: good example: an event that gets absorbed and you want to create
+
+Change 229
 Index: 257
 Original Time: 00:13:01:00 --> 00:13:03:00
 New Time: 00:13:01.000 --> 00:13:03.000
 Before: come online, fast API.
-After: command line, FastAPI.
+After: a character—you'll do exactly the same thing.
 
-Change 154
+Change 230
 Index: 258
 Original Time: 00:13:03:00 --> 00:13:05:00
 New Time: 00:13:03.000 --> 00:13:05.000
 Before: Maybe you want to talk, add a different type of API or an event, a
-After: Maybe you want to add a different type of API or an event—a
+After: Pack it into a DTO object, send it off to the application layer.
 
-Change 155
+Change 231
+Index: 259
+Original Time: 00:13:06:00 --> 00:13:09:00
+New Time: 00:13:06.000 --> 00:13:09.000
+Before: good example, an event that gets absorbed and you want to create
+After: Create character in the application layer and that's it.
+
+Change 232
 Index: 260
 Original Time: 00:13:09:00 --> 00:13:11:00
 New Time: 00:13:09.000 --> 00:13:11.000
 Before: a character, you'll do exactly the same thing.
-After: a character—you'll do exactly the same thing.
+After: You don't worry about that.
 
-Change 156
+Change 233
+Index: 261
+Original Time: 00:13:11:00 --> 00:13:14:00
+New Time: 00:13:11.000 --> 00:13:14.000
+Before: Pack it into a DTO object, send it off to the application layer.
+After: In that way, you are creating a loosely coupled
+
+Change 234
 Index: 262
 Original Time: 00:13:14:00 --> 00:13:17:00
 New Time: 00:13:14.000 --> 00:13:17.000
 Before: Uh, character, uh, create
-After: Character—create
+After: system, which makes it easy to change.
 
-Change 157
+Change 235
 Index: 263
 Original Time: 00:13:17:00 --> 00:13:19:00
 New Time: 00:13:17.000 --> 00:13:19.000
 Before: character in the application layer and that's it.
-After: character in the application layer, and that's it.
+After: The moment you have a tightly coupled system,
 
-Change 158
+Change 236
+Index: 264
+Original Time: 00:13:20:00 --> 00:13:21:00
+New Time: 00:13:20.000 --> 00:13:21.000
+Before: You don't worry about that.
+After: if anything changes, then you need to
+
+Change 237
 Index: 265
 Original Time: 00:13:21:00 --> 00:13:24:00
 New Time: 00:13:21.000 --> 00:13:24.000
 Before: In that way, you are creating a loose coupled
-After: In that way, you are creating a loosely coupled
+After: try and figure out where all the dependencies are and what needs to change.
 
-Change 159
+Change 238
+Index: 266
+Original Time: 00:13:24:00 --> 00:13:27:00
+New Time: 00:13:24.000 --> 00:13:27.000
+Before: system, which makes it easy to change.
+After: And that was a quick walkthrough
+
+Change 239
 Index: 267
 Original Time: 00:13:27:00 --> 00:13:30:00
 New Time: 00:13:27.000 --> 00:13:30.000
 Before: The moment you have a tightly coupled system.
-After: The moment you have a tightly coupled system,
+After: for the implementation of Episode 2.
 
-Change 160
+Change 240
 Index: 268
 Original Time: 00:13:30:00 --> 00:13:33:00
 New Time: 00:13:30.000 --> 00:13:33.000
 Before: If anything changes, then you need to
-After: if anything changes, then you need to
+After: I will see you in the next version, in the next episode.
 
-Change 161
+Change 241
 Index: 269
 Original Time: 00:13:33:00 --> 00:13:37:00
 New Time: 00:13:33.000 --> 00:13:37.000
 Before: try and figure out where are all the dependencies and what needs to change.
-After: try and figure out where all the dependencies are and what needs to change.
+After: I hope this was helpful. If there's anything that
 
-Change 162
+Change 242
+Index: 270
+Original Time: 00:13:37:00 --> 00:13:40:00
+New Time: 00:13:37.000 --> 00:13:40.000
+Before: And that was a quick walkthrough
+After: you want me to zoom in on,
+
+Change 243
+Index: 271
+Original Time: 00:13:40:00 --> 00:13:43:00
+New Time: 00:13:40.000 --> 00:13:43.000
+Before: for the implementation of episode two.
+After: let me know.
+
+Change 244
+Index: 272
+Original Time: 00:13:43:00 --> 00:13:48:00
+New Time: 00:13:43.000 --> 00:13:48.000
+Before: I will see you in the next version, in the next episode.
+After: Is there any of this that you want me to expand on?
+
+Change 245
 Index: 273
 Original Time: 00:13:48:00 --> 00:13:51:00
 New Time: 00:13:48.000 --> 00:13:51.000
 Before: So I hope this was helpful if there's anything that
-After: So I hope this was helpful. If there's anything that
+After: I'm going to make these walkthroughs quicker,
 
-Change 163
+Change 246
 Index: 274
 Original Time: 00:13:51:00 --> 00:13:52:00
 New Time: 00:13:51.000 --> 00:13:52.000
 Before: you want me to zoom in on.
-After: you want me to zoom in on,
+After: so it takes a little bit less time, but there is obviously the
 
-Change 164
+Change 247
 Index: 275
 Original Time: 00:13:52:00 --> 00:13:53:00
 New Time: 00:13:52.000 --> 00:13:53.000
 Before: Let me know.
-After: let me know.
+After: chance that you might want me to expand on anything here.
 
-Change 165
+Change 248
+Index: 276
+Original Time: 00:13:53:00 --> 00:13:55:00
+New Time: 00:13:53.000 --> 00:13:55.000
+Before: Is there any of this that you want me to expand on?
+After: Just let me know and I'm looking forward to seeing you on the
+
+Change 249
+Index: 277
+Original Time: 00:13:56:00 --> 00:13:59:00
+New Time: 00:13:56.000 --> 00:13:59.000
+Before: I'm going to make these walkthroughs quicker,
+After: instructions for Episode 3.
+
+Change 250
 Index: 278
 Original Time: 00:13:59:00 --> 00:14:03:00
 New Time: 00:13:59.000 --> 00:14:03.000
 Before: so it takes a little bit less time, but there is obviously the
-After: so it takes a little less time, but there is obviously the
+After: Thank you.
+
+Change 251
+Index: 279
+Original Time: 00:14:03:00 --> 00:14:06:00
+New Time: 00:14:03.000 --> 00:14:06.000
+Before: chance that you might want me to expand on anything here.
+After: 
+
+Change 252
+Index: 280
+Original Time: 00:14:06:00 --> 00:14:09:00
+New Time: 00:14:06.000 --> 00:14:09.000
+Before: Just let me know and I'm looking forward to seeing you on the
+After: 
+
+Change 253
+Index: 281
+Original Time: 00:14:09:00 --> 00:14:12:00
+New Time: 00:14:09.000 --> 00:14:12.000
+Before: instructions for episode three.
+After: 
+
+Change 254
+Index: 282
+Original Time: 00:14:12:00 --> 00:14:13:00
+New Time: 00:14:12.000 --> 00:14:13.000
+Before: Thank you.
+After:
