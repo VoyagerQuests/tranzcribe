@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Generated output files
+# *.changes.txt
+# demo_files/output.itt
