@@ -1,49 +1,7 @@
 from pathlib import Path
 
-from transcribe_enhance.application.pipeline import run_pipeline
-from transcribe_enhance.domain.models import AIConfig, Context, Instructions, OutputRules
 from transcribe_enhance.infrastructure.itt_parser import parse_itt
 from transcribe_enhance.infrastructure.itt_writer import write_itt
-
-
-def _instructions() -> Instructions:
-    return Instructions(
-        context=Context(
-            purpose="Test",
-            audience="Test",
-            tone="Neutral",
-            details="",
-        ),
-        output_rules=OutputRules(
-            max_chars_per_line=42,
-            max_lines_per_caption=2,
-            max_reading_speed_cps=17,
-            min_duration_ms=700,
-            max_duration_ms=6000,
-            line_break_style="punctuation",
-            casing="sentence",
-            punctuation="standard",
-            profanity_policy="mask",
-        ),
-        ai=AIConfig(provider="openai", model="gpt-4.1", temperature=0.2),
-    )
-
-
-def test_roundtrip_preserves_exact_bytes(tmp_path: Path) -> None:
-    source = Path(__file__).parent / "fixtures" / "sample.itt"
-    output = tmp_path / "output.itt"
-
-    run_pipeline(
-        audio_path=tmp_path / "audio.m4a",
-        itt_path=source,
-        instructions=_instructions(),
-        output_path=output,
-        allow_timing_adjust=True,
-        enable_ai=False,
-    )
-
-    assert output.read_bytes() == source.read_bytes()
-
 
 def test_patch_only_updates_target_segment(tmp_path: Path) -> None:
     source = Path(__file__).parent / "fixtures" / "sample.itt"

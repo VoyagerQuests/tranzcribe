@@ -3,6 +3,7 @@
 
 from pathlib import Path
 import re
+from xml.etree import ElementTree as ET
 from xml.sax.saxutils import escape
 
 from transcribe_enhance.domain.models import Segment
@@ -104,3 +105,79 @@ def write_itt(
 ) -> None:
     patched = _patch_itt_text(original_text, parsed, segments)
     path.write_text(patched, encoding="utf-8")
+
+
+def write_itt_from_segments(
+    path: Path,
+    segments: list[Segment],
+    language: str = "en",
+) -> None:
+    ttml_ns = "http://www.w3.org/ns/ttml"
+    ttp_ns = "http://www.w3.org/ns/ttml#parameter"
+    tts_ns = "http://www.w3.org/ns/ttml#styling"
+    xml_ns = "http://www.w3.org/XML/1998/namespace"
+
+    ET.register_namespace("", ttml_ns)
+    ET.register_namespace("ttp", ttp_ns)
+    ET.register_namespace("tts", tts_ns)
+
+    root = ET.Element(
+        f"{{{ttml_ns}}}tt",
+        {
+            f"{{{ttp_ns}}}timeBase": "media",
+            f"{{{xml_ns}}}lang": language,
+        },
+    )
+    head = ET.SubElement(root, f"{{{ttml_ns}}}head")
+    styling = ET.SubElement(head, f"{{{ttml_ns}}}styling")
+    ET.SubElement(
+        styling,
+        f"{{{ttml_ns}}}style",
+        {
+            f"{{{xml_ns}}}id": "normal",
+            f"{{{tts_ns}}}color": "white",
+            f"{{{tts_ns}}}fontFamily": "sansSerif",
+            f"{{{tts_ns}}}fontSize": "100%",
+        },
+    )
+    layout = ET.SubElement(head, f"{{{ttml_ns}}}layout")
+    ET.SubElement(
+        layout,
+        f"{{{ttml_ns}}}region",
+        {
+            f"{{{xml_ns}}}id": "bottom",
+            f"{{{tts_ns}}}displayAlign": "after",
+            f"{{{tts_ns}}}extent": "100% 15%",
+            f"{{{tts_ns}}}origin": "0% 85%",
+            f"{{{tts_ns}}}writingMode": "lrtb",
+        },
+    )
+    body = ET.SubElement(
+        root,
+        f"{{{ttml_ns}}}body",
+        {
+            f"{{{tts_ns}}}color": "white",
+            "region": "bottom",
+            "style": "normal",
+        },
+    )
+    div = ET.SubElement(body, f"{{{ttml_ns}}}div")
+
+    for segment in segments:
+        p = ET.SubElement(
+            div,
+            f"{{{ttml_ns}}}p",
+            {
+                "begin": _format_timecode(segment.start_ms),
+                "end": _format_timecode(segment.end_ms),
+                "region": "bottom",
+            },
+        )
+        p.text = segment.text
+
+    tree = ET.ElementTree(root)
+    try:
+        ET.indent(tree, space="  ", level=0)
+    except AttributeError:
+        pass
+    tree.write(path, encoding="utf-8", xml_declaration=True)

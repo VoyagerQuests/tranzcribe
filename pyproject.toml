@@ -1,7 +1,7 @@
 [project]
 name = "tranzcribe"
 version = "0.1.0"
-description = "Add your description here"
+description = "Tranzcribe helps creators create transcriptions and captions of their content."
 readme = "README.md"
 requires-python = ">=3.14.0"
 dependencies = [
@@ -9,7 +9,7 @@ dependencies = [
 ]
 
 [project.scripts]
-transcribe-enhance = "transcribe_enhance.delivery.cli:main"
+tranzcribe = "transcribe_enhance.delivery.cli:main"
 
 [dependency-groups]
 dev = ["pytest"]
