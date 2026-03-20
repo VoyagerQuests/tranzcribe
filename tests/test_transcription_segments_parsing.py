@@ -3,13 +3,13 @@ from pathlib import Path
 
 import pytest
 
+from transcribe_enhance.application.pipeline import _split_words_into_segments
 from transcribe_enhance.application.punctuation_merge import merge_punctuation
 from transcribe_enhance.domain.models import Segment, Word
 from transcribe_enhance.infrastructure.ai_openai import (
     _coerce_transcription_segments,
     _coerce_transcription_words,
 )
-from transcribe_enhance.application.pipeline import _split_words_into_segments
 
 
 LOG_PATH = (
@@ -40,48 +40,21 @@ def _segment_with_text(segments: list[Segment], text: str) -> Segment:
     raise AssertionError(f"Missing segment with text: {text}")
 
 
-def _words_for_segments(segments: list[Segment], words: list[Word]) -> list[Word]:
-    if not segments:
-        return []
-
-    selected: list[Word] = []
-    word_idx = 0
-
-    for seg_idx, segment in enumerate(segments):
-        next_start_ms = (
-            segments[seg_idx + 1].start_ms if seg_idx + 1 < len(segments) else None
-        )
-        while word_idx < len(words):
-            word = words[word_idx]
-            if word.start_ms > segment.end_ms:
-                break
-            if (
-                word.start_ms == segment.end_ms
-                and next_start_ms is not None
-                and word.start_ms >= next_start_ms
-            ):
-                break
-            if word.start_ms >= segment.start_ms:
-                selected.append(word)
-            word_idx += 1
-
-    return selected
-
-
 def test_coerce_transcription_segments_strips_text_and_converts_ms(
     whisper_log_payload: dict,
 ) -> None:
     segments = _coerce_transcription_segments(whisper_log_payload["segments"])
 
+    assert len(segments) == 9
     assert segments[0] == Segment(
         start_ms=7220,
         end_ms=9600,
         text="When you start a new software project,",
     )
-    assert segments[13] == Segment(
-        start_ms=46760,
-        end_ms=50700,
-        text="I've been running software companies for the past 30 years.",
+    assert segments[-1] == Segment(
+        start_ms=33420,
+        end_ms=34740,
+        text="Database systems might change.",
     )
 
 
@@ -90,6 +63,7 @@ def test_coerce_transcription_words_preserves_whisper_word_tokens(
 ) -> None:
     words = _coerce_transcription_words(whisper_log_payload["words"])
 
+    assert len(words) == 71
     assert words[0] == Word(start_ms=7220, end_ms=7820, text="When")
     assert [word.text for word in words[:8]] == [
         "When",
@@ -101,101 +75,64 @@ def test_coerce_transcription_words_preserves_whisper_word_tokens(
         "project",
         "you're",
     ]
+    assert any(word.text == "possible" for word in words)
     assert any(word.text == "That's" for word in words)
-    assert any(word.text == "I've" for word in words)
 
 
 @pytest.mark.parametrize(
-    ("segment_texts", "expected_words"),
+    ("segment_text", "expected_words"),
     [
         (
-            ["When you start a new software project,"],
+            "When you start a new software project,",
             ["When", "you", "start", "a", "new", "software", "project,"],
         ),
         (
-            ["How do you do this?"],
-            ["How", "do", "you", "do", "this?"],
-        ),
-        (
-            ["At some point, I was, what's the word,"],
-            ["At", "some", "point,", "I", "was,", "what's", "the", "word,"],
-        ),
-        (
-            ["read the blog there by Robert C. Martin."],
-            ["read", "the", "blog", "there", "by", "Robert", "C.", "Martin."],
-        ),
-        (
+            "the project and you want to get moving as soon as possible,",
             [
-                "That's part of the...",
-                "You, for example, have business logic in FastAPI.",
+                "the",
+                "project",
+                "and",
+                "you",
+                "want",
+                "to",
+                "get",
+                "moving",
+                "as",
+                "soon",
+                "as",
+                "possible,",
             ],
+        ),
+        (
+            "getting feedback from your customers. That's one thing.",
             [
+                "getting",
+                "feedback",
+                "from",
+                "your",
+                "customers.",
                 "That's",
-                "part",
-                "of",
-                "the...",
-                "You,",
-                "for",
-                "example,",
-                "have",
-                "business",
-                "logic",
-                "in",
-                "FastAPI.",
+                "one",
+                "thing.",
             ],
+        ),
+        (
+            "Database systems might change.",
+            ["Database", "systems", "might", "change."],
         ),
     ],
 )
-def test_merge_punctuation_handles_real_whisper_punctuation_patterns(
+def test_merge_punctuation_matches_current_saved_whisper_segments(
     parsed_transcription: tuple[list[Segment], list[Word]],
-    segment_texts: list[str],
+    segment_text: str,
     expected_words: list[str],
 ) -> None:
     segments, words = parsed_transcription
-    selected_segments = [_segment_with_text(segments, text) for text in segment_texts]
-    selected_words = _words_for_segments(selected_segments, words)
+    selected_segment = _segment_with_text(segments, segment_text)
 
-    punctuated_words = merge_punctuation(selected_segments, selected_words)
+    punctuated_words = merge_punctuation([selected_segment], words)
 
     assert [word.text for word in punctuated_words] == expected_words
-
-
-def test_merge_punctuation_handles_adjacent_segments_with_mixed_punctuation(
-    parsed_transcription: tuple[list[Segment], list[Word]],
-) -> None:
-    segments, words = parsed_transcription
-    selected_segments = [
-        _segment_with_text(segments, "read the blog there by Robert C. Martin."),
-        _segment_with_text(segments, "The blog's a bit dated,"),
-        _segment_with_text(segments, "some of the terminology is a bit old."),
-    ]
-    selected_words = _words_for_segments(selected_segments, words)
-
-    punctuated_words = merge_punctuation(selected_segments, selected_words)
-
-    assert [word.text for word in punctuated_words] == [
-        "read",
-        "the",
-        "blog",
-        "there",
-        "by",
-        "Robert",
-        "C.",
-        "Martin.",
-        "The",
-        "blog's",
-        "a",
-        "bit",
-        "dated,",
-        "some",
-        "of",
-        "the",
-        "terminology",
-        "is",
-        "a",
-        "bit",
-        "old.",
-    ]
 
 
 def test_merge_punctuation_can_process_full_saved_whisper_log(
@@ -205,9 +142,11 @@ def test_merge_punctuation_can_process_full_saved_whisper_log(
 
     punctuated_words = merge_punctuation(segments, words)
 
-    assert punctuated_words
+    assert len(punctuated_words) == len(words)
     assert punctuated_words[0].text == "When"
-    assert any(word.text == "database," for word in punctuated_words)
+    assert any(word.text == "possible," for word in punctuated_words)
+    assert any(word.text == "customers." for word in punctuated_words)
+    assert any(word.text == "thing." for word in punctuated_words)
 
 
 def test_split_words_keeps_possible_in_following_caption(

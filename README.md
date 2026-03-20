@@ -12,7 +12,7 @@ Tranzcribe is a Python CLI tool that transcribes audio into iTT (TTML) captions 
 
 ```bash
 uv run tranzcribe \
-  --audioin "demo_files/Q1E3a.m4a" \
+  --audioin "demo_files/Q1E3aIntroduction.wav" \
   --ittout "demo_files/output.itt"
 ```
 
