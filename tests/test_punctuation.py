@@ -9,12 +9,10 @@ from transcribe_enhance.infrastructure.ai_openai import (
 
 
 INPUT_LOG = Path("src/transcribe_enhance/infrastructure/transcription_segments.log")
-OUTPUT_LOG = Path("src/transcribe_enhance/infrastructure/transcription_punctuation.log")
 
 
-def main() -> None:
-    if not INPUT_LOG.exists():
-        raise FileNotFoundError(f"Missing {INPUT_LOG}")
+def test_saved_whisper_log_can_be_punctuated_end_to_end() -> None:
+    assert INPUT_LOG.exists(), f"Missing {INPUT_LOG}"
 
     data = json.loads(INPUT_LOG.read_text(encoding="utf-8"))
     segments = _coerce_transcription_segments(data["segments"])
@@ -42,9 +40,10 @@ def main() -> None:
             for word in punctuated_words
         ],
     }
-    OUTPUT_LOG.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n")
-    print(f"Wrote {OUTPUT_LOG}")
 
-
-if __name__ == "__main__":
-    main()
+    assert output["audio_file"]
+    assert len(output["segments"]) == 9
+    assert len(output["words"]) == len(words)
+    assert output["words"][0]["word"] == "When"
+    assert any(item["word"] == "possible," for item in output["words"])
+    assert any(item["word"] == "thing." for item in output["words"])
