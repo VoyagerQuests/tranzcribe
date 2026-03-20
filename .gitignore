@@ -18,7 +18,7 @@ htmlcov/
 
 # Generated output files
 *.changes.txt
-demo_files/output.itt
+demo_files/
 
 # UV
 .uv/
